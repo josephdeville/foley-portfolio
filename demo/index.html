@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Research + Hermes — Interactive Demo | Joseph DeVille</title>
+<style>
+  :root {
+    --orange: #EF9648;
+    --dark-green: #0F364A;
+    --blue: #2256C7;
+    --almond: #F1DCC9;
+    --teal: #33B7A8;
+    --bg: #FAFAF7;
+    --card: #FFFFFF;
+    --border: #E5E0D8;
+    --text: #0F364A;
+    --muted: #6B7A82;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Nunito', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 32px 24px 80px; }
+  header { border-bottom: 2px solid var(--orange); padding-bottom: 20px; margin-bottom: 28px; }
+  header .pre { color: var(--orange); font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; font-size: 12px; }
+  header h1 { margin: 6px 0 4px; font-size: 28px; font-weight: 800; color: var(--dark-green); }
+  header .sub { color: var(--muted); font-size: 14px; }
+  .intro { background: var(--almond); padding: 18px 22px; border-left: 4px solid var(--orange); border-radius: 4px; margin-bottom: 28px; font-size: 14px; }
+  .intro strong { color: var(--dark-green); }
+  .tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+  .tab:hover { border-color: var(--orange); color: var(--dark-green); }
+  .tab.active {
+    background: var(--dark-green);
+    color: white;
+    border-color: var(--dark-green);
+  }
+  .prospect { display: none; }
+  .prospect.active { display: block; }
+  .prospect-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .prospect-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .prospect-header .who h2 { margin: 0 0 4px; font-size: 20px; color: var(--dark-green); font-weight: 800; }
+  .prospect-header .who .role { color: var(--muted); font-size: 14px; }
+  .pill { background: var(--teal); color: white; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+  .pill.vertical { background: var(--orange); }
+  .pill.persona { background: var(--blue); }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin: 20px 0 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .research-grid { grid-template-columns: 1fr; } }
+  .research-block h4 { margin: 0 0 6px; font-size: 13px; color: var(--dark-green); }
+  .research-block ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+  .research-block li { margin-bottom: 4px; }
+
+  .persona-box {
+    background: #F7F3EE;
+    padding: 14px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  .persona-box .trait {
+    display: inline-block;
+    background: white;
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin: 3px 4px 3px 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--dark-green);
+  }
+
+  .close-plan ol { padding-left: 20px; margin: 6px 0; font-size: 14px; }
+  .close-plan li { margin-bottom: 6px; }
+
+  .variants { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 10px; }
+  @media (max-width: 800px) { .variants { grid-template-columns: 1fr; } }
+  .variant {
+    background: #FDFBF8;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    position: relative;
+  }
+  .variant:hover { border-color: var(--orange); transform: translateY(-1px); }
+  .variant.selected { border-color: var(--blue); background: white; box-shadow: 0 2px 8px rgba(34,86,199,0.08); }
+  .variant-label {
+    display: inline-block;
+    background: var(--dark-green);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .variant-subject { font-weight: 700; font-size: 13px; margin-bottom: 6px; color: var(--dark-green); }
+  .variant-body { font-size: 12.5px; line-height: 1.5; color: #333; white-space: pre-wrap; }
+  .variant-meta { margin-top: 10px; font-size: 11px; color: var(--muted); }
+
+  .signal-box {
+    display: none;
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: var(--dark-green);
+    color: white;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+  .signal-box.visible { display: block; }
+  .signal-box strong { color: var(--orange); }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+  footer a { color: var(--blue); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="pre">Interactive Demo</div>
+    <h1>Deep Research + Hermes</h1>
+    <div class="sub">Three pre-loaded prospects. Walk through the agent output. Built by Joseph DeVille.</div>
+  </header>
+
+  <div class="intro">
+    <strong>How this works:</strong> Pick a prospect below. The page shows the research packet Deep Research pulled, the persona read it inferred, the close plan it recommended, and three Hermes-generated outbound variants. Click any variant to see the learning signal that would re-rank it for future sends to this persona.
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-target="p1">1 · VP Engineering, dev-tools SaaS</button>
+    <button class="tab" data-target="p2">2 · Head of Operations, mid-market law firm</button>
+    <button class="tab" data-target="p3">3 · Director of Finance, Series B payments</button>
+  </div>
+
+  <!-- PROSPECT 1 -->
+  <div class="prospect active" id="p1">
+    <div class="prospect-card">
+      <div class="prospect-header">
+        <div class="who">
+          <h2>Jamie K. — VP of Engineering</h2>
+          <div class="role">at Fictive — a 450-person developer tools SaaS, Series C</div>
+        </div>
+        <div>
+          <span class="pill vertical">Dev Tools</span>
+          <span class="pill persona">Technical, Decisive</span>
+        </div>
+      </div>
+
+      <div class="section-label">Research Packet</div>
+      <div class="research-grid">
+        <div class="research-block">
+          <h4>Company signals</h4>
+          <ul>
+            <li>Raised $60M Series C, March 2026</li>
+            <li>Posted 12 platform-eng job reqs in last 90 days</li>
+            <li>Stack: GitHub, AWS, Datadog, PagerDuty, Backstage (self-hosted, 2+ years)</li>
+            <li>Engineering blog: 3 posts in Q3 on "scaling Backstage"</li>
+          </ul>
+        </div>
+        <div class="research-block">
+          <h4>Attendee profile</h4>
+          <ul>
+            <li>VP Eng for 14 months, prior Director at Stripe</li>
+            <li>CS degree, 11 years in infra / platform</li>
+            <li>Active on LinkedIn: posts about developer productivity</li>
+            <li>No prior touches from us</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-label">Persona Read</div>
+      <div class="persona-box">
+        <div style="margin-bottom:10px">
+          <span class="trait">Data-driven</span>
+          <span class="trait">Decisive</span>
+          <span class="trait">Build-vs-buy skeptic</span>
+          <span class="trait">Owns the budget</span>
+          <span class="trait">Will say no in 30 seconds</span>
+        </div>
+        Technical-depth buyer. Will not sit through a demo that doesn't open with architecture. Trusts peer-reviewed numbers over vendor claims. Already publicly committed to a Backstage build, so the pitch is not "switch tools" — it's "stop paying the tax of maintaining one."
+      </div>
+
+      <div class="section-label">Close Plan</div>
+      <div class="close-plan">
+        <ol>
+          <li><strong>Open with the Backstage tax.</strong> Lead with time spent on plugin maintenance per quarter at companies their size (~400hrs eng).</li>
+          <li><strong>Lead product angle:</strong> managed scorecards + ownership, not "replace Backstage." Co-exist first, consolidate later.</li>
+          <li><strong>Likely objection:</strong> "we already invested in Backstage." Pre-empt with 2 case studies of Series C dev-tools companies that ran both for 90 days and killed Backstage after.</li>
+          <li><strong>Stall point:</strong> security review. Have SOC 2 + the self-hosted deployment doc ready for the second call.</li>
+        </ol>
+      </div>
+
+      <div class="section-label">Hermes Outbound Variants</div>
+      <div class="variants">
+        <div class="variant" data-signal="v1a">
+          <div class="variant-label">Variant A</div>
+          <div class="variant-subject">The Backstage math at your scale</div>
+          <div class="variant-body">Jamie,
+
+Saw the Q3 posts on scaling your Backstage build. At ~450 engineers, the average we track for Backstage plugin maintenance is 380-420 eng hours per quarter.
+
+Three Series C dev-tools companies ran Cortex alongside Backstage for 90 days this year. All three killed the self-hosted instance after.
+
+Worth 20 minutes to see the architecture side-by-side?
+
+Joe</div>
+          <div class="variant-meta">Hook: cost, specific hours. CTA: 20 min, architecture frame.</div>
+        </div>
+        <div class="variant" data-signal="v1b">
+          <div class="variant-label">Variant B</div>
+          <div class="variant-subject">Question on your Backstage rollout</div>
+          <div class="variant-body">Jamie,
+
+Short question. You've been shipping Backstage improvements publicly for 2 years. At what point does the plugin maintenance stop being a feature of your platform team and start being a tax?
+
+Asking because we see the inflection usually hit between 400 and 600 engineers. You're inside that window.
+
+Open to compare notes?
+
+Joe</div>
+          <div class="variant-meta">Hook: question, respects the prior investment. CTA: peer frame.</div>
+        </div>
+        <div class="variant" data-signal="v1c">
+          <div class="variant-label">Variant C</div>
+          <div class="variant-subject">Fictive is hiring 12 platform engineers</div>
+          <div class="variant-body">Jamie,
+
+12 platform eng reqs open since August. The usual reason at this stage: the internal tools that got you to 400 engineers need to get you to 1,000, and the team to maintain them is the hiring bottleneck.
+
+Cortex lets a platform team of 6 do the work of 12. Happy to show how, 20 min.
+
+Joe</div>
+          <div class="variant-meta">Hook: hiring signal. CTA: ratio-of-people frame.</div>
+        </div>
+      </div>
+
+      <div class="signal-box" id="signal-p1">
+        <strong>Learning signal:</strong> <span id="signal-text-p1"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROSPECT 2 -->
+  <div class="prospect" id="p2">
+    <div class="prospect-card">
+      <div class="prospect-header">
+        <div class="who">
+          <h2>Patricia M. — Head of Operations</h2>
+          <div class="role">at Cole &amp; Reeves — regional law firm, 180 attorneys across 4 offices</div>
+        </div>
+        <div>
+          <span class="pill vertical">Legal Services</span>
+          <span class="pill persona">Consensus, Risk-aware</span>
+        </div>
+      </div>
+
+      <div class="section-label">Research Packet</div>
+      <div class="research-grid">
+        <div class="research-block">
+          <h4>Firm signals</h4>
+          <ul>
+            <li>Opened a 4th office (Nashville) in June 2026</li>
+            <li>Practice mix: corporate, IP, employment, litigation</li>
+            <li>Stack: iManage, NetDocuments, Clio Manage, Outlook</li>
+            <li>Recent press: internal AI task force launched Q2</li>
+          </ul>
+        </div>
+        <div class="research-block">
+          <h4>Attendee profile</h4>
+          <ul>
+            <li>Head of Ops for 6 years, prior firm admin at an AmLaw 200</li>
+            <li>No technical background, buys through committee</li>
+            <li>LinkedIn: active in legal ops community, posts on ILTA</li>
+            <li>Prior touch: downloaded a white paper on AI governance in May</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-label">Persona Read</div>
+      <div class="persona-box">
+        <div style="margin-bottom:10px">
+          <span class="trait">Consensus buyer</span>
+          <span class="trait">Risk-first</span>
+          <span class="trait">Needs legal + IT buy-in</span>
+          <span class="trait">Reads every clause</span>
+          <span class="trait">Slow yes, hard no</span>
+        </div>
+        Operates in a profession where being wrong is expensive. Will not move without IT security sign-off, managing-partner buy-in, and at least one peer firm reference. Anything that reads as "move fast and break things" dies on arrival. Frame everything in terms of controls, auditability, and reversibility.
+      </div>
+
+      <div class="section-label">Close Plan</div>
+      <div class="close-plan">
+        <ol>
+          <li><strong>Open with governance, not productivity.</strong> Lead with how the solution handles data residency, privilege, and audit trail. Features come after.</li>
+          <li><strong>Lead product angle:</strong> matter-level controls and attorney-review gates. Not autonomy, oversight.</li>
+          <li><strong>Likely objection:</strong> "we'd need IT to evaluate." Pre-empt with a SOC 2 Type II report + the deployment doc in the first email.</li>
+          <li><strong>Reference strategy:</strong> one peer firm (similar size, similar practice mix) that will take a reference call. Named firm matters more than number of logos.</li>
+          <li><strong>Buying committee:</strong> Managing Partner (final yes), IT Director (security veto), 1-2 practice-group chairs (adoption).</li>
+        </ol>
+      </div>
+
+      <div class="section-label">Hermes Outbound Variants</div>
+      <div class="variants">
+        <div class="variant" data-signal="v2a">
+          <div class="variant-label">Variant A</div>
+          <div class="variant-subject">AI governance framework for mid-market firms</div>
+          <div class="variant-body">Patricia,
+
+Saw Cole &amp; Reeves stood up an AI task force earlier this year. At 4 offices and 180 attorneys, the governance piece is usually what stalls deployment.
+
+We put together a framework used by 3 firms similar to yours (data residency, privilege controls, matter-level audit trail). Happy to send the one-pager and compare notes on what your task force has landed on so far.
+
+Joseph</div>
+          <div class="variant-meta">Hook: governance. CTA: send doc, no meeting ask.</div>
+        </div>
+        <div class="variant" data-signal="v2b">
+          <div class="variant-label">Variant B</div>
+          <div class="variant-subject">Nashville office — ops question</div>
+          <div class="variant-body">Patricia,
+
+Congrats on the Nashville launch. A pattern we see with firms opening a 4th office: the internal tools that supported 3 offices quietly stop scaling, and ops absorbs the gap.
+
+Would it help to compare what firms your size are doing to avoid that, specifically on matter intake and conflicts across offices?
+
+No pitch, 15 min call.
+
+Joseph</div>
+          <div class="variant-meta">Hook: expansion moment, ops pain. CTA: 15 min, no-pitch frame.</div>
+        </div>
+        <div class="variant" data-signal="v2c">
+          <div class="variant-label">Variant C</div>
+          <div class="variant-subject">Reference call with Henderson Prescott?</div>
+          <div class="variant-body">Patricia,
+
+Short note. Henderson Prescott (210 attorneys, similar practice mix to Cole &amp; Reeves) agreed to take reference calls from firms considering the kind of AI governance work we do.
+
+If it's helpful, I can broker the intro. They went live in March and could share what worked and what didn't on the IT security review.
+
+Joseph</div>
+          <div class="variant-meta">Hook: peer reference first. No product mention.</div>
+        </div>
+      </div>
+
+      <div class="signal-box" id="signal-p2">
+        <strong>Learning signal:</strong> <span id="signal-text-p2"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROSPECT 3 -->
+  <div class="prospect" id="p3">
+    <div class="prospect-card">
+      <div class="prospect-header">
+        <div class="who">
+          <h2>Daniel R. — Director of Finance</h2>
+          <div class="role">at Vessel — Series B payments infrastructure, 95 employees</div>
+        </div>
+        <div>
+          <span class="pill vertical">Payments</span>
+          <span class="pill persona">Analytical, Owns Numbers</span>
+        </div>
+      </div>
+
+      <div class="section-label">Research Packet</div>
+      <div class="research-grid">
+        <div class="research-block">
+          <h4>Company signals</h4>
+          <ul>
+            <li>Series B $28M, April 2026</li>
+            <li>Vertical: SMB card-present payments, LATAM expansion</li>
+            <li>Stack: Netsuite, Ramp, Stripe (internal billing)</li>
+            <li>Hiring 2 FP&amp;A analysts, posted Oct</li>
+          </ul>
+        </div>
+        <div class="research-block">
+          <h4>Attendee profile</h4>
+          <ul>
+            <li>Director of Finance, 2 years at Vessel, prior Sr Mgr at Plaid</li>
+            <li>MBA, CFA level II, built FP&amp;A function from scratch</li>
+            <li>Active on Twitter (fintech twitter), replies in finance ops threads</li>
+            <li>Prior touch: attended a webinar on Series B unit economics, July</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-label">Persona Read</div>
+      <div class="persona-box">
+        <div style="margin-bottom:10px">
+          <span class="trait">Owns the model</span>
+          <span class="trait">Numbers-first</span>
+          <span class="trait">Suspicious of vendor claims</span>
+          <span class="trait">Will test you on math</span>
+          <span class="trait">Reports to CFO + board</span>
+        </div>
+        Will open the first email with the spreadsheet mindset on. Loses respect fast if a vendor misstates a benchmark or quotes a figure without a source. Needs the numbers to defend internally more than they need the product to work — because they're the one who has to defend them.
+      </div>
+
+      <div class="section-label">Close Plan</div>
+      <div class="close-plan">
+        <ol>
+          <li><strong>Open with a specific number, cited.</strong> Not "save you time." Give him the real benchmark with the source.</li>
+          <li><strong>Lead product angle:</strong> close-the-books cycle time, with a before/after at a comparable payments company.</li>
+          <li><strong>Likely objection:</strong> "we're already building this internally with the new FP&amp;A hires." Pre-empt with the build-vs-buy math at Series B headcount.</li>
+          <li><strong>Buying committee:</strong> Director Finance (champion), CFO (approver), Head of Eng (integration veto).</li>
+        </ol>
+      </div>
+
+      <div class="section-label">Hermes Outbound Variants</div>
+      <div class="variants">
+        <div class="variant" data-signal="v3a">
+          <div class="variant-label">Variant A</div>
+          <div class="variant-subject">Close-the-books benchmark for payments at your stage</div>
+          <div class="variant-body">Daniel,
+
+Benchmark we pulled for Series B payments companies (n=18, headcount 60-120): median monthly close is 11 business days. Top quartile is 6.
+
+Vessel's at 95 employees, LATAM expansion live. The LATAM entity work is usually where the quartile gap opens up.
+
+Happy to send the full dataset and walk through what the top quartile is doing differently.
+
+Joe</div>
+          <div class="variant-meta">Hook: cited benchmark, specific to stage. CTA: dataset, numbers-first.</div>
+        </div>
+        <div class="variant" data-signal="v3b">
+          <div class="variant-label">Variant B</div>
+          <div class="variant-subject">The FP&amp;A hire math</div>
+          <div class="variant-body">Daniel,
+
+Saw the 2 FP&amp;A reqs open. Standard build-vs-buy question at Series B: is it faster to hire 2 analysts and write the automation internally, or buy the tool and have the same 2 analysts doing higher-leverage work?
+
+At 95 employees the math usually favors buy by ~7 months of payback. Happy to send the model.
+
+Joe</div>
+          <div class="variant-meta">Hook: hiring signal, build-vs-buy math.</div>
+        </div>
+        <div class="variant" data-signal="v3c">
+          <div class="variant-label">Variant C</div>
+          <div class="variant-subject">Plaid -&gt; Vessel transition — close velocity</div>
+          <div class="variant-body">Daniel,
+
+You moved from Plaid to Vessel 2 years ago. Common pattern for finance leaders making that jump: the tooling at Plaid was mature, the tooling at the next company isn't yet, and the first 18 months are spent building what you took for granted.
+
+If Vessel's still in that build-out phase, there's a shortcut worth 20 minutes.
+
+Joe</div>
+          <div class="variant-meta">Hook: career-arc pattern, respect-the-journey frame.</div>
+        </div>
+      </div>
+
+      <div class="signal-box" id="signal-p3">
+        <strong>Learning signal:</strong> <span id="signal-text-p3"></span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <strong>About this demo:</strong> output is representative of what Deep Research + Hermes produce at Cortex. No live company data is used. Full architecture in the <a href="../case-studies/01-cortex-deep-research-agent.md">case study</a>.
+    <br><br>
+    Built by Joseph DeVille · <a href="mailto:joseph.deville@cloudanditservices.com">joseph.deville@cloudanditservices.com</a> · <a href="../README.md">Back to portfolio</a>
+  </footer>
+</div>
+
+<script>
+  // tab switching
+  document.querySelectorAll('.tab').forEach(t => {
+    t.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+      document.querySelectorAll('.prospect').forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+      document.getElementById(t.dataset.target).classList.add('active');
+    });
+  });
+
+  // signal messages per variant
+  const signals = {
+    v1a: "Simulated reply rate +31%, 2 meetings booked from last 50 sends. Agent biases toward specific-hours + peer-example frames for Technical Decisive persona.",
+    v1b: "Simulated reply rate +18%. Question-based openers perform well on Technical Decisive, but CTA is too soft — agent would A/B tighten the ask on next iteration.",
+    v1c: "Simulated reply rate -12%. Hiring-signal hook underperforms for VP Eng (feels surveilled). Agent would down-weight hiring-signal openers for this persona.",
+    v2a: "Simulated reply rate +42%. Governance frame + no-meeting CTA outperforms by 3x on Consensus / Risk-aware persona in Legal. Agent biases toward 'send doc' CTAs for first touch in this segment.",
+    v2b: "Simulated reply rate +15%. Expansion-moment hook works, but the 'no pitch' phrasing reads defensive — agent would test variants without that phrase.",
+    v2c: "Simulated reply rate +38%. Peer-reference-first (no product mention) performs strongly on legal firms. Needs reference-firm inventory to scale — agent flags as capacity-constrained.",
+    v3a: "Simulated reply rate +47%. Cited-benchmark openers dominate for Numbers-First persona. Agent biases Hermes toward benchmark-with-n-value frames for all Finance prospects.",
+    v3b: "Simulated reply rate +22%. Build-vs-buy math works, but requires the hiring signal to be present — agent only triggers this variant when open FP&A reqs are detected.",
+    v3c: "Simulated reply rate +9%. Career-arc hook is clever but too familiar for a first touch. Agent moves this variant to touch 3 or 4, after relationship is warmer."
+  };
+
+  document.querySelectorAll('.variant').forEach(v => {
+    v.addEventListener('click', () => {
+      const prospectId = v.closest('.prospect').id;
+      const signalBox = document.getElementById('signal-' + prospectId);
+      const signalText = document.getElementById('signal-text-' + prospectId);
+
+      // deselect siblings
+      v.closest('.variants').querySelectorAll('.variant').forEach(x => x.classList.remove('selected'));
+      v.classList.add('selected');
+
+      signalText.textContent = signals[v.dataset.signal];
+      signalBox.classList.add('visible');
+    });
+  });
+</script>
+</body>
+</html>
