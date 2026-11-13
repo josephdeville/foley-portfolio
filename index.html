@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joseph DeVille · GTM FDE</title>
-  <meta name="description" content="Joseph DeVille. Working GTM prototypes for Foley fleet compliance: research agents, signal feeds, pipeline measurement. Hermes demo at /demo/.">
+  <title>Joseph DeVille · GTM engineer</title>
+  <meta name="description" content="Joseph DeVille. GTM engineer / FDE. Shipped work: Hermes, account briefs, forecast evidence, signal engines.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -18,7 +17,6 @@
           colors: {
             background: '#07080c',
             foreground: '#f4f1ea',
-            muted: '#9aa3ad',
             card: '#12151d',
           }
         }
@@ -27,30 +25,16 @@
   </script>
   <style>
     html { scroll-behavior: smooth; }
-    body {
-      font-family: Inter, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
     .glow {
       pointer-events: none;
       position: fixed;
       inset: -10% 0 auto;
-      height: 55vh;
+      height: 50vh;
       background:
-        radial-gradient(55% 80% at 50% 0%, rgba(124, 58, 237, .32), transparent 70%),
-        radial-gradient(40% 50% at 85% 8%, rgba(239, 150, 72, .16), transparent 60%);
+        radial-gradient(55% 80% at 50% 0%, rgba(124, 58, 237, .28), transparent 70%),
+        radial-gradient(40% 50% at 85% 8%, rgba(239, 150, 72, .14), transparent 60%);
       z-index: 0;
-    }
-    .tile { transform: rotate(var(--tilt, 0deg)); }
-    .tile:nth-child(1) { --tilt: -3.5deg; }
-    .tile:nth-child(2) { --tilt: -1.2deg; }
-    .tile:nth-child(3) { --tilt: 0.8deg; }
-    .tile:nth-child(4) { --tilt: 3.2deg; }
-    .tile:nth-child(5) { --tilt: -2deg; }
-    .tile:nth-child(6) { --tilt: 2.4deg; }
-    .tile:hover { transform: rotate(0deg) translateY(-8px); }
-    @media (max-width: 768px) {
-      .tile { transform: none; }
     }
   </style>
 </head>
@@ -60,169 +44,155 @@
   <header class="sticky top-0 z-30 flex items-center justify-between gap-4 px-6 md:px-12 py-5 bg-background/70 backdrop-blur-xl border-b border-white/10">
     <a href="/" class="text-lg md:text-xl font-semibold tracking-tighter uppercase">Joseph DeVille</a>
     <nav class="hidden md:flex items-center gap-7 text-sm text-white/70">
-      <a href="#prototypes" class="hover:text-white">Prototypes</a>
+      <a href="#work" class="hover:text-white">Work</a>
       <a href="/demo/" class="hover:text-white">Demo</a>
-      <a href="#stack" class="hover:text-white">Stack</a>
+      <a href="#about" class="hover:text-white">About</a>
       <a href="https://github.com/josephdeville" class="hover:text-white">GitHub</a>
     </nav>
-    <a href="/demo/" class="inline-flex items-center rounded-full bg-foreground text-neutral-900 px-4 py-2 text-sm font-medium hover:bg-white transition-colors">
-      Open Hermes demo
-    </a>
+    <a href="/demo/" class="inline-flex items-center rounded-full bg-foreground text-neutral-900 px-4 py-2 text-sm font-medium hover:bg-white transition-colors">Open Hermes</a>
   </header>
 
   <main class="relative z-10">
-    <section class="px-6 md:px-12 pt-16 md:pt-28 pb-8 max-w-7xl mx-auto">
-      <p class="text-xs font-medium tracking-widest uppercase text-white/50 mb-6">Foley · fleet compliance · DOT / FMCSA</p>
+    <section class="px-6 md:px-12 pt-16 md:pt-24 pb-6 max-w-7xl mx-auto">
       <h1 class="leading-none tracking-tighter">
         <span class="block text-5xl md:text-7xl font-extralight opacity-80">Joseph</span>
         <span class="block text-7xl md:text-9xl font-semibold -ml-1 md:-ml-2 mt-[-8px] md:mt-[-16px]">DeVille</span>
       </h1>
-      <div class="mt-8 md:mt-12 max-w-2xl">
-        <h2 class="text-2xl md:text-3xl font-normal tracking-tight mb-4">GTM FDE for Foley</h2>
-        <p class="text-sm md:text-base text-white/70 font-light leading-relaxed">
-          Generator, not coordinator. Hypothesis to experiment to ship to a number. Foley hires, screens, and monitors drivers. This page is working prototypes for that GTM engine: research before the rep, signal feeds, outbound that learns, measurement in pipeline.
-        </p>
-      </div>
-      <div class="flex flex-wrap gap-3 mt-10">
-        <a href="/demo/" class="inline-flex items-center gap-2 rounded-full bg-foreground text-neutral-900 px-6 py-3 text-sm font-medium hover:bg-white transition-colors">
-          Open Hermes demo
-          <iconify-icon icon="solar:arrow-right-linear" style="font-size: 1rem;"></iconify-icon>
+      <p class="mt-8 text-2xl md:text-3xl font-light tracking-tight text-white/85">GTM engineer / FDE</p>
+      <p class="mt-4 max-w-xl text-sm md:text-base text-white/60 font-light leading-relaxed">
+        Signal feeds, research agents, personalized outbound, deliverability. Measured in pipeline, not activity.
+      </p>
+    </section>
+
+    <section id="work" class="px-6 md:px-12 py-12 md:py-16 max-w-7xl mx-auto">
+      <div class="text-xs font-medium tracking-widest uppercase text-white/40 mb-8">Selected work</div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+        <a href="/demo/" class="group md:col-span-2 rounded-2xl overflow-hidden bg-card border border-white/10 hover:border-white/25 transition-colors">
+          <div class="h-56 md:h-80 overflow-hidden bg-neutral-900">
+            <img src="assets/hermes.jpg" alt="Deep Research + Hermes walkthrough" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-6 md:p-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Live · /demo/</div>
+              <h2 class="text-2xl md:text-3xl font-light tracking-tight">Deep Research + Hermes</h2>
+              <p class="mt-2 text-sm text-white/55 font-light max-w-xl">Calendar-style trigger to research packet, persona, close plan, learning outbound. Static walkthrough. No public LLM.</p>
+            </div>
+            <span class="text-sm text-white/70">Open demo</span>
+          </div>
         </a>
-        <a href="https://github.com/josephdeville" class="inline-flex items-center rounded-full border border-white/20 px-6 py-3 text-sm hover:bg-white/10 transition-colors">
-          GitHub
+
+        <a href="https://jd-sanity-gtm-brief.netlify.app/" class="group rounded-2xl overflow-hidden bg-card border border-white/10 hover:border-white/25 transition-colors">
+          <div class="h-48 overflow-hidden bg-neutral-900">
+            <img src="assets/briefs.jpg" alt="GTM account intelligence" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-6">
+            <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Live</div>
+            <h2 class="text-xl font-medium tracking-tight">GTM account briefs</h2>
+            <p class="mt-2 text-sm text-white/55 font-light">Eval-gated Sanity queue. Briefs ranked before a rep sees them.</p>
+          </div>
+        </a>
+
+        <a href="https://forecast-evidence-engine.vercel.app/" class="group rounded-2xl overflow-hidden bg-card border border-white/10 hover:border-white/25 transition-colors">
+          <div class="h-48 overflow-hidden bg-neutral-900">
+            <img src="assets/forecast.jpg" alt="Forecast Evidence Engine" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-6">
+            <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Live</div>
+            <h2 class="text-xl font-medium tracking-tight">Forecast Evidence Engine</h2>
+            <p class="mt-2 text-sm text-white/55 font-light">Commit vs evidence-adjusted Commit. Interactive CRO view. Synthetic data.</p>
+          </div>
+        </a>
+
+        <a href="https://planitroi-itad-signal-engine-hp.vercel.app/" class="group rounded-2xl overflow-hidden bg-card border border-white/10 hover:border-white/25 transition-colors">
+          <div class="h-44 overflow-hidden bg-neutral-900">
+            <img src="assets/itad.jpg" alt="ITAD signal engine" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-6">
+            <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Signals</div>
+            <h2 class="text-xl font-medium tracking-tight">ITAD signal engine</h2>
+            <p class="mt-2 text-sm text-white/55 font-light">Public events scored into who may act next.</p>
+          </div>
+        </a>
+
+        <a href="https://neo-signal-engine.vercel.app/" class="group rounded-2xl overflow-hidden bg-card border border-white/10 hover:border-white/25 transition-colors">
+          <div class="h-44 overflow-hidden bg-neutral-900">
+            <img src="assets/neo.jpg" alt="Neo signal engine" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-6">
+            <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Signals</div>
+            <h2 class="text-xl font-medium tracking-tight">Neo signal engine</h2>
+            <p class="mt-2 text-sm text-white/55 font-light">Hiring signals from public postings, scored into an employer queue.</p>
+          </div>
+        </a>
+
+        <a href="https://gaiia-gtm-engine.vercel.app/" class="group rounded-2xl overflow-hidden bg-card border border-white/10 hover:border-white/25 transition-colors">
+          <div class="h-44 overflow-hidden bg-neutral-900">
+            <img src="assets/gaiia.jpg" alt="gaiia GTM engine" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-6">
+            <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Queue</div>
+            <h2 class="text-xl font-medium tracking-tight">gaiia GTM engine</h2>
+            <p class="mt-2 text-sm text-white/55 font-light">Clickable pipeline queue and routing UI. Concept demo.</p>
+          </div>
+        </a>
+
+        <a href="/case-studies/" class="group rounded-2xl overflow-hidden bg-card border border-white/10 hover:border-white/25 transition-colors">
+          <div class="h-44 bg-neutral-950 flex items-end p-6">
+            <p class="text-4xl md:text-5xl font-extralight tracking-tight leading-none">01–05</p>
+          </div>
+          <div class="p-6">
+            <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Writeups</div>
+            <h2 class="text-xl font-medium tracking-tight">Case studies</h2>
+            <p class="mt-2 text-sm text-white/55 font-light">Hermes, BDR feed, Rainforest bounce drop, Anchor and Crux outbound.</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/josephdeville" class="group md:col-span-2 rounded-2xl overflow-hidden bg-card border border-white/10 hover:border-white/25 transition-colors">
+          <div class="h-48 overflow-hidden bg-neutral-900">
+            <img src="assets/github.jpg" alt="github.com/josephdeville" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-6 md:p-8 flex items-end justify-between gap-4">
+            <div>
+              <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Code</div>
+              <h2 class="text-xl md:text-2xl font-medium tracking-tight">github.com/josephdeville</h2>
+              <p class="mt-2 text-sm text-white/55 font-light">The rest of the work lives here. Repos, not a brochure.</p>
+            </div>
+            <span class="text-sm text-white/70">Open</span>
+          </div>
         </a>
       </div>
     </section>
 
-    <section id="prototypes" class="px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto">
-      <div class="mb-10 md:mb-14">
-        <div class="text-xs font-medium tracking-widest uppercase text-white/50 mb-3">Working prototypes</div>
-        <h2 class="text-3xl md:text-5xl font-extralight tracking-tight max-w-3xl">The Foley posting asks to see agents in front of real buyers, and what they did to pipeline. Click the builds.</h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-        <a href="/demo/" class="tile group rounded-2xl bg-card border border-white/10 overflow-hidden shadow-2xl hover:border-white/25 transition-all">
-          <div class="h-36 bg-gradient-to-br from-teal-500/30 to-neutral-900 p-5">
-            <span class="text-[10px] uppercase tracking-widest border border-white/20 rounded-full px-2 py-1">Research agents · /demo/</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-medium tracking-tight mb-2">Deep Research + Hermes</h3>
-            <p class="text-sm text-white/60 font-light leading-relaxed">Account known before the rep. Packet, persona, close plan, learning outbound. Static walkthrough on purpose. No public LLM.</p>
-          </div>
-        </a>
-
-        <a href="https://jd-sanity-gtm-brief.netlify.app/" class="tile group rounded-2xl bg-card border border-white/10 overflow-hidden shadow-2xl hover:border-white/25 transition-all">
-          <div class="h-36 bg-gradient-to-br from-sky-500/30 to-neutral-900 p-5">
-            <span class="text-[10px] uppercase tracking-widest border border-white/20 rounded-full px-2 py-1">Scoring · evals</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-medium tracking-tight mb-2">GTM account intelligence</h3>
-            <p class="text-sm text-white/60 font-light leading-relaxed">Eval-gated briefs before the rep queue. Qualification with a rubric, not a vibe.</p>
-          </div>
-        </a>
-
-        <a href="https://forecast-evidence-engine.vercel.app/" class="tile group rounded-2xl bg-card border border-white/10 overflow-hidden shadow-2xl hover:border-white/25 transition-all">
-          <div class="h-36 bg-gradient-to-br from-violet-500/30 to-neutral-900 p-5">
-            <span class="text-[10px] uppercase tracking-widest border border-white/20 rounded-full px-2 py-1">Measure pipeline</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-medium tracking-tight mb-2">Forecast Evidence Engine</h3>
-            <p class="text-sm text-white/60 font-light leading-relaxed">Commit vs evidence-adjusted Commit. Attribution you can inspect. Synthetic data. Same loop as instrumenting Foley tests from day one.</p>
-          </div>
-        </a>
-
-        <a href="https://planitroi-itad-signal-engine-hp.vercel.app/" class="tile group rounded-2xl bg-card border border-white/10 overflow-hidden shadow-2xl hover:border-white/25 transition-all">
-          <div class="h-36 bg-gradient-to-br from-orange-400/25 to-neutral-900 p-5">
-            <span class="text-[10px] uppercase tracking-widest border border-white/20 rounded-full px-2 py-1">Signals · ITAD</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-medium tracking-tight mb-2">ITAD signal engine</h3>
-            <p class="text-sm text-white/60 font-light leading-relaxed">Public events scored into who may act next. Same shape as new DOT authority, fleet growth, safety events, renewals.</p>
-          </div>
-        </a>
-
-        <a href="https://neo-signal-engine.vercel.app/" class="tile group rounded-2xl bg-card border border-white/10 overflow-hidden shadow-2xl hover:border-white/25 transition-all">
-          <div class="h-36 bg-gradient-to-br from-amber-400/20 to-neutral-900 p-5">
-            <span class="text-[10px] uppercase tracking-widest border border-white/20 rounded-full px-2 py-1">Signals · Neo</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-medium tracking-tight mb-2">Neo signal engine</h3>
-            <p class="text-sm text-white/60 font-light leading-relaxed">Hiring signals from public postings into a scored employer queue. Trigger detection, not a static list.</p>
-          </div>
-        </a>
-
-        <a href="https://gaiia-gtm-engine.vercel.app/" class="tile group rounded-2xl bg-card border border-white/10 overflow-hidden shadow-2xl hover:border-white/25 transition-all">
-          <div class="h-36 bg-gradient-to-br from-emerald-400/20 to-neutral-900 p-5">
-            <span class="text-[10px] uppercase tracking-widest border border-white/20 rounded-full px-2 py-1">Routing · gaiia</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-medium tracking-tight mb-2">gaiia GTM engine</h3>
-            <p class="text-sm text-white/60 font-light leading-relaxed">Pipeline queue and routing UI. Concept demo of the motion. Not a Foley production instance.</p>
-          </div>
-        </a>
-      </div>
-
-      <a href="https://github.com/josephdeville" class="mt-6 flex items-center justify-between rounded-2xl bg-neutral-900 border border-white/10 px-6 py-5 hover:border-white/25 transition-colors">
+    <section class="px-6 md:px-12 py-12 md:py-16 border-y border-white/10 bg-neutral-950">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
         <div>
-          <div class="text-xs uppercase tracking-widest text-white/50 mb-1">GitHub</div>
-          <div class="text-lg font-medium tracking-tight">github.com/josephdeville</div>
+          <div class="text-4xl md:text-5xl font-extralight tracking-tight">$1.57M</div>
+          <div class="mt-2 text-xs uppercase tracking-widest text-white/40">Pipeline influence</div>
         </div>
-        <iconify-icon icon="solar:arrow-right-up-linear" style="font-size: 1.5rem;"></iconify-icon>
-      </a>
-    </section>
-
-    <section class="px-6 md:px-12 py-12 md:py-20 border-y border-white/10 bg-neutral-950">
-      <div class="max-w-7xl mx-auto">
-        <p class="text-xs uppercase tracking-widest text-white/50 mb-10">Confirmed numbers only. Cortex and Rainforest. Nothing else invented.</p>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
-          <div>
-            <div class="text-4xl md:text-5xl font-extralight tracking-tight">$1.57M</div>
-            <div class="mt-2 text-xs uppercase tracking-widest text-white/50">Pipeline influence</div>
-          </div>
-          <div>
-            <div class="text-4xl md:text-5xl font-extralight tracking-tight">17</div>
-            <div class="mt-2 text-xs uppercase tracking-widest text-white/50">Cortex builds</div>
-          </div>
-          <div>
-            <div class="text-4xl md:text-5xl font-extralight tracking-tight">10k+</div>
-            <div class="mt-2 text-xs uppercase tracking-widest text-white/50">Leads scored</div>
-          </div>
-          <div>
-            <div class="text-4xl md:text-5xl font-extralight tracking-tight">40%</div>
-            <div class="mt-2 text-xs uppercase tracking-widest text-white/50">Bounce drop · Rainforest</div>
-          </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-extralight tracking-tight">17</div>
+          <div class="mt-2 text-xs uppercase tracking-widest text-white/40">Cortex builds</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-extralight tracking-tight">10k+</div>
+          <div class="mt-2 text-xs uppercase tracking-widest text-white/40">Leads scored</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-extralight tracking-tight">40%</div>
+          <div class="mt-2 text-xs uppercase tracking-widest text-white/40">Bounce drop · Rainforest</div>
         </div>
       </div>
     </section>
 
-    <section class="px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto">
-      <div class="text-xs font-medium tracking-widest uppercase text-white/50 mb-3">First 90 days</div>
-      <h2 class="text-3xl md:text-5xl font-extralight tracking-tight mb-8 max-w-3xl">What Foley asked for. Mapped to work already clickable.</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="rounded-2xl border border-white/10 bg-card p-6">
-          <h3 class="font-medium mb-2">Validate or kill hypotheses fast</h3>
-          <p class="text-sm text-white/60 font-light leading-relaxed">Control, metric chosen in advance, kill the loser. Hermes and the forecast engine are the public proof of that loop.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-card p-6">
-          <h3 class="font-medium mb-2">Prioritize the backlog and ship</h3>
-          <p class="text-sm text-white/60 font-light leading-relaxed">Laptop, API, CRM. First shippable: calendar-triggered research brief, then a signal feed for DOT authority, fleet growth, safety, renewals.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-card p-6">
-          <h3 class="font-medium mb-2">Measure from day one</h3>
-          <p class="text-sm text-white/60 font-light leading-relaxed">Pipeline, conversion, cost per lead. Not activity. $1.57M is Cortex pipeline influence. Forecast evidence is how claimed Commit gets challenged.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-card p-6">
-          <h3 class="font-medium mb-2">Tools that keep learning</h3>
-          <p class="text-sm text-white/60 font-light leading-relaxed">Task agents stay on schema. Learning agents re-weight from replies and stage change. The /demo/ walkthrough is that distinction, static on purpose.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="stack" class="px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto">
-      <div class="text-xs font-medium tracking-widest uppercase text-white/50 mb-3">Stack</div>
-      <h2 class="text-3xl md:text-5xl font-extralight tracking-tight mb-6 max-w-2xl">Python, TypeScript, agents, CRM. Build it yourself.</h2>
-      <p class="text-sm md:text-base text-white/60 font-light max-w-2xl mb-10 leading-relaxed">
-        Packet for the Foley GTM Forward Deployed Engineer seat with CAIO Misha Sulpovar. Foley is fleet compliance, not a law firm. Five-truck owner-operators and national fleets, both.
+    <section id="about" class="px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto">
+      <div class="text-xs font-medium tracking-widest uppercase text-white/40 mb-3">About</div>
+      <h2 class="text-3xl md:text-5xl font-extralight tracking-tight mb-6 max-w-2xl">I build GTM systems reps actually use.</h2>
+      <p class="text-sm md:text-base text-white/55 font-light max-w-2xl leading-relaxed mb-4">
+        TypeScript and Python. Agents, enrichment, routing, outbound, deliverability. One foot in pipeline this quarter, one in process that compounds.
+      </p>
+      <p class="text-sm md:text-base text-white/45 font-light max-w-2xl leading-relaxed mb-10">
+        Some of this work maps to fleet compliance GTM (DOT / FMCSA): new authority, fleet growth, renewals. Foley is one audience for that pattern, not the name of the site.
       </p>
       <div class="flex flex-wrap gap-2">
         <span class="rounded-full border border-white/15 px-4 py-2 text-sm text-white/70">TypeScript</span>
@@ -237,10 +207,11 @@
   </main>
 
   <footer class="relative z-10 border-t border-white/10 px-6 md:px-12 py-10">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6 text-sm text-white/50">
-      <div>Joseph DeVille · GTM FDE · Hermes stays at /demo/</div>
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6 text-sm text-white/45">
+      <div>Joseph DeVille · Houston</div>
       <div class="flex gap-6">
         <a href="/demo/" class="hover:text-white">Demo</a>
+        <a href="/case-studies/" class="hover:text-white">Case studies</a>
         <a href="https://github.com/josephdeville" class="hover:text-white">GitHub</a>
         <a href="https://www.linkedin.com/in/joseph-deville/" class="hover:text-white">LinkedIn</a>
       </div>
