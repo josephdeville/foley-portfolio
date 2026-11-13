@@ -48,3 +48,5 @@ Static lists can't be A/B tested like that. Signal feeds can.
 ## Why this matters for Foley
 
 The Foley role is explicitly "sales and marketing function, building tools, maintaining those tools, making sure they're working." A signal-driven lead feed is the first thing I'd be looking at in a 90-day plan: it compounds, it's measurable, and every follow-on build (routing, scoring, outreach agent) plugs into the same scaffolding.
+
+**Foley signal catalog (same pattern, different inputs):** new DOT authority, fleet growth, safety events, Clearinghouse / renewal timing, self-serve vs enterprise intent—each becomes a testable hypothesis with a 60-day conversion read and a kill rule.

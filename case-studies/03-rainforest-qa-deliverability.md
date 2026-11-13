@@ -31,4 +31,4 @@ Three layers:
 
 ## Why this matters for Foley
 
-Deliverability is the quiet, unglamorous half of GTM infrastructure that nobody wants to own until it breaks. Foley running a growing AI-driven outbound motion into regulated verticals (legal) means sending volume and sending complexity both go up. Someone has to make sure the infrastructure keeps up. I've done the recovery once. I'd rather build it right from day one than clean it up later.
+Deliverability is the quiet, unglamorous half of GTM infrastructure that nobody wants to own until it breaks. Foley is scaling AI-driven outbound into a **regulated B2B market** (DOT / FMCSA, consent, PII)—sending volume and compliance complexity rise together. Someone has to own suppression, throttling, and receiver-specific rules before reputation damage shows up in pipeline. I've done the recovery once. I'd rather build it right from day one than clean it up later.
