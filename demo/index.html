@@ -3,60 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deep Research + Hermes — Interactive Demo | Joseph DeVille</title>
+<title>Deep Research + Hermes · Joseph DeVille</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --orange: #EF9648;
-    --dark-green: #0F364A;
-    --blue: #2256C7;
-    --almond: #F1DCC9;
     --teal: #33B7A8;
-    --bg: #FAFAF7;
-    --card: #FFFFFF;
-    --border: #E5E0D8;
-    --text: #0F364A;
-    --muted: #6B7A82;
+    --blue: #6ea8ff;
+    --bg: #07080c;
+    --card: #12151d;
+    --border: rgba(255,255,255,.10);
+    --text: #f4f1ea;
+    --muted: rgba(244,241,234,.55);
+    --fg: #f4f1ea;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Nunito', 'Segoe UI', sans-serif;
+    font-family: Inter, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 980px; margin: 0 auto; padding: 32px 24px 80px; }
-  header { border-bottom: 2px solid var(--orange); padding-bottom: 20px; margin-bottom: 28px; }
-  header .pre { color: var(--orange); font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; font-size: 12px; }
-  header h1 { margin: 6px 0 4px; font-size: 28px; font-weight: 800; color: var(--dark-green); }
-  header .sub { color: var(--muted); font-size: 14px; }
-  .intro { background: var(--almond); padding: 18px 22px; border-left: 4px solid var(--orange); border-radius: 4px; margin-bottom: 28px; font-size: 14px; }
-  .intro strong { color: var(--dark-green); }
-  .tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-  .tab {
+  .glow {
+    pointer-events: none;
+    position: fixed;
+    inset: -10% 0 auto;
+    height: 50vh;
+    background:
+      radial-gradient(55% 80% at 50% 0%, rgba(124, 58, 237, .28), transparent 70%),
+      radial-gradient(40% 50% at 85% 8%, rgba(239, 150, 72, .14), transparent 60%);
+    z-index: 0;
+  }
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 48px;
+    background: rgba(7,8,12,.70);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .site-nav { display: flex; align-items: center; gap: 28px; font-size: 14px; }
+  .site-nav a { color: rgba(255,255,255,.7); text-decoration: none; }
+  .site-nav a:hover, .site-nav a.current { color: #fff; }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    background: var(--fg);
+    color: #171717;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: #fff; }
+  @media (max-width: 768px) {
+    .site-header { padding: 20px 24px; }
+    .site-nav { display: none; }
+  }
+  .wrap { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 48px 24px 80px; }
+  .page-kicker {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+    margin-bottom: 12px;
+  }
+  .page-title {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 200;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+  .page-sub { color: var(--muted); font-size: 15px; font-weight: 300; margin-bottom: 28px; }
+  .intro {
     background: var(--card);
     border: 1px solid var(--border);
-    padding: 12px 16px;
-    cursor: pointer;
-    border-radius: 6px;
+    padding: 18px 22px;
+    border-radius: 16px;
+    margin-bottom: 28px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 300;
+    color: var(--muted);
+  }
+  .intro strong { color: var(--text); font-weight: 500; }
+  .tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
     color: var(--muted);
     transition: all 0.15s;
     font-family: inherit;
   }
-  .tab:hover { border-color: var(--orange); color: var(--dark-green); }
+  .tab:hover { border-color: rgba(255,255,255,.25); color: var(--text); }
   .tab.active {
-    background: var(--dark-green);
-    color: white;
-    border-color: var(--dark-green);
+    background: var(--fg);
+    color: #171717;
+    border-color: var(--fg);
   }
   .prospect { display: none; }
   .prospect.active { display: block; }
   .prospect-card {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 16px;
     padding: 24px;
     margin-bottom: 20px;
   }
@@ -68,100 +143,126 @@
     flex-wrap: wrap;
     gap: 12px;
   }
-  .prospect-header .who h2 { margin: 0 0 4px; font-size: 20px; color: var(--dark-green); font-weight: 800; }
-  .prospect-header .who .role { color: var(--muted); font-size: 14px; }
-  .pill { background: var(--teal); color: white; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+  .prospect-header .who h2 { margin: 0 0 4px; font-size: 20px; color: var(--text); font-weight: 500; letter-spacing: -0.02em; }
+  .prospect-header .who .role { color: var(--muted); font-size: 14px; font-weight: 300; }
+  .pill { background: var(--teal); color: #07080c; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
   .pill.vertical { background: var(--orange); }
-  .pill.persona { background: var(--blue); }
+  .pill.persona { background: var(--blue); color: #07080c; }
 
   .section-label {
     font-size: 11px;
-    font-weight: 800;
+    font-weight: 500;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--orange);
+    color: rgba(255,255,255,.4);
     margin: 20px 0 8px;
     padding-bottom: 6px;
     border-bottom: 1px solid var(--border);
   }
   .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 640px) { .research-grid { grid-template-columns: 1fr; } }
-  .research-block h4 { margin: 0 0 6px; font-size: 13px; color: var(--dark-green); }
-  .research-block ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+  .research-block h4 { margin: 0 0 6px; font-size: 13px; color: var(--text); font-weight: 500; }
+  .research-block ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--muted); font-weight: 300; }
   .research-block li { margin-bottom: 4px; }
 
   .persona-box {
-    background: #F7F3EE;
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--border);
     padding: 14px 16px;
-    border-radius: 6px;
+    border-radius: 12px;
     font-size: 14px;
+    font-weight: 300;
+    color: var(--muted);
   }
   .persona-box .trait {
     display: inline-block;
-    background: white;
+    background: transparent;
     border: 1px solid var(--border);
     padding: 3px 10px;
-    border-radius: 12px;
+    border-radius: 999px;
     margin: 3px 4px 3px 0;
     font-size: 12px;
-    font-weight: 600;
-    color: var(--dark-green);
+    font-weight: 500;
+    color: var(--text);
   }
 
-  .close-plan ol { padding-left: 20px; margin: 6px 0; font-size: 14px; }
+  .close-plan ol { padding-left: 20px; margin: 6px 0; font-size: 14px; color: var(--muted); font-weight: 300; }
   .close-plan li { margin-bottom: 6px; }
+  .close-plan strong { color: var(--text); font-weight: 500; }
 
   .variants { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 10px; }
   @media (max-width: 800px) { .variants { grid-template-columns: 1fr; } }
   .variant {
-    background: #FDFBF8;
+    background: rgba(255,255,255,.03);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 16px;
     padding: 14px;
     cursor: pointer;
     transition: all 0.15s;
     position: relative;
   }
-  .variant:hover { border-color: var(--orange); transform: translateY(-1px); }
-  .variant.selected { border-color: var(--blue); background: white; box-shadow: 0 2px 8px rgba(34,86,199,0.08); }
+  .variant:hover { border-color: rgba(255,255,255,.25); transform: translateY(-2px); }
+  .variant.selected { border-color: rgba(239,150,72,.55); background: rgba(239,150,72,.08); }
   .variant-label {
     display: inline-block;
-    background: var(--dark-green);
-    color: white;
-    padding: 2px 8px;
-    border-radius: 3px;
+    background: var(--fg);
+    color: #171717;
+    padding: 2px 10px;
+    border-radius: 999px;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 8px;
   }
-  .variant-subject { font-weight: 700; font-size: 13px; margin-bottom: 6px; color: var(--dark-green); }
-  .variant-body { font-size: 12.5px; line-height: 1.5; color: #333; white-space: pre-wrap; }
-  .variant-meta { margin-top: 10px; font-size: 11px; color: var(--muted); }
+  .variant-subject { font-weight: 500; font-size: 13px; margin-bottom: 6px; color: var(--text); }
+  .variant-body { font-size: 12.5px; line-height: 1.5; color: var(--muted); white-space: pre-wrap; font-weight: 300; }
+  .variant-meta { margin-top: 10px; font-size: 11px; color: rgba(255,255,255,.4); }
 
   .signal-box {
     display: none;
     margin-top: 16px;
     padding: 14px 16px;
-    background: var(--dark-green);
-    color: white;
-    border-radius: 6px;
+    background: var(--card);
+    border: 1px solid rgba(239,150,72,.4);
+    color: var(--text);
+    border-radius: 16px;
     font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
   }
   .signal-box.visible { display: block; }
-  .signal-box strong { color: var(--orange); }
+  .signal-box strong { color: var(--orange); font-weight: 500; }
 
-  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
-  footer a { color: var(--blue); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
+  .page-footer {
+    margin-top: 48px;
+    padding: 24px 0 0;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: rgba(255,255,255,.45);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .page-footer a { color: rgba(255,255,255,.7); text-decoration: none; }
+  .page-footer a:hover { color: #fff; }
 </style>
 </head>
 <body>
+<div class="glow" aria-hidden="true"></div>
+<header class="site-header">
+  <a class="brand" href="/">Joseph DeVille</a>
+  <nav class="site-nav">
+    <a href="/#work">Work</a>
+    <a class="current" href="/demo/">Demo</a>
+    <a href="/#about">About</a>
+    <a href="https://github.com/josephdeville">GitHub</a>
+  </nav>
+  <a class="nav-cta" href="/demo/">Open Hermes</a>
+</header>
 <div class="wrap">
-  <header>
-    <div class="pre">Interactive Demo</div>
-    <h1>Deep Research + Hermes</h1>
-    <div class="sub">Three pre-loaded prospects. Walk through the agent output. Built by Joseph DeVille.</div>
-  </header>
+  <div class="page-kicker">Interactive walkthrough</div>
+  <h1 class="page-title">Deep Research + Hermes</h1>
+  <p class="page-sub">Three pre-loaded prospects. Walk through the agent output. Built by Joseph DeVille.</p>
 
   <div class="intro">
     <strong>How this works:</strong> Pick a prospect below. The page shows the research packet Deep Research pulled, the persona read it inferred, the close plan it recommended, and three Hermes-generated outbound variants. Click any variant to see the learning signal that would re-rank it for future sends to this persona. <strong>Start with prospect 2</strong> for a regulated, consensus-buying motion similar to fleet compliance sales.
@@ -494,10 +595,12 @@ Joe</div>
     </div>
   </div>
 
-  <footer>
-    <strong>About this demo:</strong> output is representative of what Deep Research + Hermes produce at Cortex. No live company data is used. Full architecture in the <a href="../case-studies/01-cortex-deep-research-agent.md">case study</a>.
-    <br><br>
-    Built by Joseph DeVille · <a href="mailto:joseph.deville@cloudanditservices.com">joseph.deville@cloudanditservices.com</a> · <a href="../README.md">Back to portfolio</a>
+  <footer class="page-footer">
+    <div>Output is representative of Deep Research + Hermes at Cortex. No live company data. <a href="/case-studies/">Case studies</a></div>
+    <div>
+      <a href="/">Work</a>
+      · <a href="https://github.com/josephdeville">GitHub</a>
+    </div>
   </footer>
 </div>
 
