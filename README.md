@@ -6,13 +6,19 @@ Former IT / cloud admin turned GTM engineer. 8+ years across SaaS (SDR, admin, G
 
 At **Cortex** I was the first in-house GTM engineer (**17 builds**). Systems credited with **$1.57M pipeline influence** and **10,000+ leads scored**. Post-Cortex I consult on **Anchor Browser** and **Crux**; both engagements started from my own outbound.
 
+### Agent philosophy (as discussed on our call)
+
+- **Task agents** (routing, scoring, enrichment): deterministic schema work—ship, measure, optimize rules; self-learning adds little.
+- **Learning agents** (research, personalization, copywriting, nuanced CRM flows): decisions need continual feedback—replies, meetings, stage progression—so the system re-weights what works.
+- **Operating mode:** one foot in **pipeline** (revenue this quarter), one in **process** (compounding time saved for sales and marketing).
+
 ---
 
 ## Start here (5 builds)
 
 | # | Build | Outcome | Try it |
 |---|--------|---------|--------|
-| 1 | **Deep Research + Hermes** — research → persona → outbound + learning loop | Part of **$1.57M** pipeline influence; pre-call research automated | **[Interactive demo](./demo/index.html)** · [case study](./case-studies/01-cortex-deep-research-agent.md) |
+| 1 | **Deep Research + Hermes** — **calendar-booking trigger** → research packet → persona/close plan → learning outbound | Part of **$1.57M** pipeline influence; pre-call brief in Slack ~30 min before the meeting | **[Interactive demo](./demo/index.html)** · [case study](./case-studies/01-cortex-deep-research-agent.md) |
 | 2 | **Signal-driven BDR feed** — Clay waterfalls, daily signal scoring, CRM routing | **10,000+** leads scored; replaced static Salesforce queues | [case study](./case-studies/02-cortex-signal-driven-bdr-feed.md) |
 | 3 | **Outbound + experiment discipline** (Anchor Browser, Crux) | Self-sourced clients; **kill rule at 500 sends/variant**; ~1.7–1.9% reply benchmark | [case study](./case-studies/04-anchor-browser-crux-outbound.md) |
 | 4 | **Deliverability infrastructure** (Rainforest QA) | **40%** drop in hard bounces; cross-platform suppression | [case study](./case-studies/03-rainforest-qa-deliverability.md) |
@@ -45,12 +51,14 @@ Three personas × verticals—including a **consensus, risk-aware buyer in a reg
 
 ---
 
-## First 90 days (draft)
+## First 90 days (draft — matches what we discussed)
 
-1. **Weeks 1–2:** Inventory GTM hypotheses with marketing + sales; pick one **high-reversibility** experiment (signal or messaging) with a pre-agreed metric and kill rule.
+Foley needs someone to **validate or kill GTM hypotheses quickly**, **prioritize the backlog and ship**, **measure from day one**, and **iterate**. Concrete plan:
+
+1. **Weeks 1–2:** Inventory hypotheses with marketing + sales; pick one **high-reversibility** experiment (signal or messaging) with a pre-agreed metric and kill rule.
 2. **Weeks 2–4:** Stand up a **signal-driven daily feed** prototype (enrichment waterfall + CRM suppression + Slack delivery)—Foley’s analog to DOT authority / fleet growth / renewal triggers.
-3. **Weeks 3–6:** Ship a **research brief agent** for top-of-funnel and mid-market reps (calendar- or queue-triggered), with LangFuse or platform-native logging for auditability.
-4. **Ongoing:** Own **deliverability** primitives before outbound volume scales; document a learning log so failed experiments aren’t repeated.
+3. **Weeks 3–6:** Ship a **calendar-triggered research brief agent** for reps, with platform-native logging for auditability (LangFuse-style traceability).
+4. **Ongoing:** Own **deliverability** before outbound volume scales; keep a **learning log** so failed experiments aren’t repeated.
 
 Full operating frame: [How I work](./case-studies/05-operating-principles.md).
 
@@ -68,7 +76,7 @@ Full operating frame: [How I work](./case-studies/05-operating-principles.md).
 
 ## Stack
 
-TypeScript, Python · LangChain, Crew AI, LangFuse, trigger.dev · Salesforce (Certified Administrator), HubSpot, Marketo · Clay, ZoomInfo, LinkedIn Sales Navigator · Smartlead, Instantly · AWS, Azure
+TypeScript, Python · LangChain, **Crew AI**, LangFuse, **trigger.dev**, **AI SDK** · Salesforce (Certified Administrator), HubSpot, Marketo · Clay, ZoomInfo, LinkedIn Sales Navigator · Smartlead, Instantly · AWS, Azure
 
 ---
 
