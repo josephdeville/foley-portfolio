@@ -1,38 +1,28 @@
-# Joseph DeVille — GTM Engineering Portfolio (Foley)
+# Joseph DeVille — working GTM prototypes (Foley)
 
-**Role:** [GTM Forward Deployed Engineer](https://jobs.ashbyhq.com/foley/91ed4c27-47fe-44e1-a501-78de7bcdfdae/application) · Hiring manager: Misha Sulpovar (CAIO)
+**Role:** [GTM Forward Deployed Engineer](https://jobs.ashbyhq.com/foley/91ed4c27-47fe-44e1-a501-78de7bcdfdae/application) · Misha Sulpovar (CAIO)
 
-Former IT / cloud admin turned GTM engineer. 8+ years across SaaS (SDR, admin, GTM engineer). I build the systems reps and marketers actually use—scoring, routing, enrichment agents, outbound infrastructure, deliverability—and measure everything against pipeline and conversion.
+This repo is a **landing page**. The portfolio is [github.com/josephdeville](https://github.com/josephdeville): live apps, not a brochure.
 
-At **Cortex** I was the first in-house GTM engineer (**17 builds**). Systems credited with **$1.57M pipeline influence** and **10,000+ leads scored**. Post-Cortex I consult on **Anchor Browser** and **Crux**; both engagements started from my own outbound.
+At Cortex: first in-house GTM engineer, **17 builds**, **$1.57M** pipeline influence, **10,000+** leads scored. Anchor Browser and Crux started from my own outbound.
+
+### Open these (no login)
+
+| Foley 90-day need | Live URL |
+|---|---|
+| Research + personalization on a booking-style trigger | **[Hermes walkthrough](https://josephdeville.github.io/foley-portfolio/demo/)** |
+| Eval-gated account briefs for reps | **[jd-sanity-gtm-brief.netlify.app](https://jd-sanity-gtm-brief.netlify.app/)** · [repo](https://github.com/josephdeville/sanity-gtm-account-intelligence) |
+| Measure pipeline (claim vs evidence) | **[forecast-evidence-engine.vercel.app](https://forecast-evidence-engine.vercel.app/)** · [repo](https://github.com/josephdeville/forecast-evidence-engine) |
+| Signal catalog → scored queue | [ITAD sample](https://planitroi-itad-signal-engine-hp.vercel.app/) · [Neo job-post signals](https://neo-signal-engine.vercel.app/) |
+| Evidence-gated SDR (clone, `DRY_RUN=1`, `/traces`) | [ai-sdr-engine](https://github.com/josephdeville/ai-sdr-engine) |
+
+Cortex attribution write-up: [joseph-deville-gtm-systems.vercel.app](https://joseph-deville-gtm-systems.vercel.app/)
 
 ### Agent philosophy (as discussed on our call)
 
-- **Task agents** (routing, scoring, enrichment): deterministic schema work—ship, measure, optimize rules; self-learning adds little.
-- **Learning agents** (research, personalization, copywriting, nuanced CRM flows): decisions need continual feedback—replies, meetings, stage progression—so the system re-weights what works.
-- **Operating mode:** one foot in **pipeline** (revenue this quarter), one in **process** (compounding time saved for sales and marketing).
-
----
-
-## Start here (5 builds)
-
-| # | Build | Outcome | Try it |
-|---|--------|---------|--------|
-| 1 | **Deep Research + Hermes** — **calendar-booking trigger** → research packet → persona/close plan → learning outbound | Part of **$1.57M** pipeline influence; pre-call brief in Slack ~30 min before the meeting | **[Interactive demo](./demo/index.html)** · [case study](./case-studies/01-cortex-deep-research-agent.md) |
-| 2 | **Signal-driven BDR feed** — Clay waterfalls, daily signal scoring, CRM routing | **10,000+** leads scored; replaced static Salesforce queues | [case study](./case-studies/02-cortex-signal-driven-bdr-feed.md) |
-| 3 | **Outbound + experiment discipline** (Anchor Browser, Crux) | Self-sourced clients; **kill rule at 500 sends/variant**; ~1.7–1.9% reply benchmark | [case study](./case-studies/04-anchor-browser-crux-outbound.md) |
-| 4 | **Deliverability infrastructure** (Rainforest QA) | **40%** drop in hard bounces; cross-platform suppression | [case study](./case-studies/03-rainforest-qa-deliverability.md) |
-| 5 | **GTM account intelligence** (public reference build) | Scored accounts + **eval rubric** before rep queue (grounding, consistency) | [Repo](https://github.com/josephdeville/sanity-gtm-account-intelligence) · [Live demo](https://jd-sanity-gtm-brief.netlify.app) |
-
-**Open-source sibling to the Cortex agent stack:** [ai-sdr-engine](https://github.com/josephdeville/ai-sdr-engine) (multi-agent research, human-in-the-loop approval, reply classification). Cortex production code (`cortexai-sdr`, `centralbrain`) is private; architecture and output shape are documented in case study 1 and the demo.
-
----
-
-## Interactive demo (recommended first click)
-
-**[Open Deep Research + Hermes →](./demo/index.html)**
-
-Three personas × verticals—including a **consensus, risk-aware buyer in a regulated services firm** (prospect 2), which mirrors how Foley sells into fleet compliance (committee, audit trail, reversibility). Walk research packet → persona → close plan → Hermes variants → simulated learning signal. Static HTML, no API keys.
+- **Task agents** (routing, scoring, enrichment): deterministic schema work. Ship, measure, optimize rules. Self-learning adds little.
+- **Learning agents** (research, personalization, copywriting, nuanced CRM flows): decisions need continual feedback (replies, meetings, stage progression) so the system re-weights what works.
+- **Operating mode:** one foot in **pipeline**, one in **process**.
 
 ---
 
@@ -86,4 +76,4 @@ Joseph DeVille · Houston, TX
 [joseph.deville@cloudanditservices.com](mailto:joseph.deville@cloudanditservices.com) · (337) 802-6686  
 [LinkedIn](https://www.linkedin.com/in/joseph-deville/) · [GitHub](https://github.com/josephdeville)
 
-**Share this portfolio:** [github.com/josephdeville/foley-portfolio](https://github.com/josephdeville/foley-portfolio) · after GitHub Pages is enabled: `https://josephdeville.github.io/foley-portfolio/`
+**Share:** [github.com/josephdeville](https://github.com/josephdeville) · landing: [josephdeville.github.io/foley-portfolio](https://josephdeville.github.io/foley-portfolio/)

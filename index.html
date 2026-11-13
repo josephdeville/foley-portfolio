@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joseph DeVille — Foley GTM FDE Portfolio</title>
-  <meta name="description" content="GTM engineering portfolio for Foley GTM Forward Deployed Engineer — agents, signals, outbound, deliverability.">
+  <title>Joseph DeVille — working GTM prototypes (Foley)</title>
+  <meta name="description" content="Clickable GTM prototypes: research on booking, signal feeds, eval-gated briefs, pipeline measurement. GitHub is the portfolio.">
   <style>
     :root {
       --orange: #EF9648;
@@ -15,16 +15,18 @@
       --border: #E5E0D8;
     }
     body { margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: var(--dark); line-height: 1.55; }
-    .wrap { max-width: 820px; margin: 0 auto; padding: 40px 24px 64px; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 40px 24px 64px; }
     h1 { font-size: 1.75rem; margin: 0 0 8px; }
+    h2 { font-size: 1.05rem; margin: 32px 0 12px; }
     .tag { color: var(--orange); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
-    .lead { color: var(--muted); font-size: 1.05rem; max-width: 38em; }
+    .lead { color: var(--muted); font-size: 1.05rem; max-width: 40em; }
     .cta {
-      display: inline-block; margin: 24px 0; padding: 14px 22px;
+      display: inline-block; margin: 8px 8px 8px 0; padding: 12px 18px;
       background: var(--dark); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;
     }
-    .cta:hover { background: var(--blue); }
-    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 20px 0; }
+    .cta.ghost { background: transparent; color: var(--dark); border: 1px solid var(--border); }
+    .cta:hover { background: var(--blue); color: #fff; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 12px 0 20px; }
     th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
     th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
     a { color: var(--blue); }
@@ -33,48 +35,61 @@
 </head>
 <body>
   <div class="wrap">
-    <p class="tag">Foley · GTM Forward Deployed Engineer</p>
-    <h1>Joseph DeVille</h1>
-    <p class="lead">GTM engineer: signal feeds, research agents, personalized outbound, and deliverability—measured in pipeline, not activity. Cortex ($1.57M influenced pipeline, 17 builds) · consulting (Anchor, Crux).</p>
+    <p class="tag">Foley GTM FDE · Misha · working prototypes</p>
+    <h1>Click the builds. GitHub is the portfolio.</h1>
+    <p class="lead">This page is a map, not the product. Foley’s 90-day job is research and personalization on booking, signal feeds, pipeline measurement, and ship-measure-iterate. These URLs are live.</p>
 
-    <a class="cta" href="./demo/index.html">Open interactive demo →</a>
+    <p>
+      <a class="cta" href="./demo/index.html">Hermes walkthrough</a>
+      <a class="cta ghost" href="https://jd-sanity-gtm-brief.netlify.app/">Eval-gated briefs</a>
+      <a class="cta ghost" href="https://forecast-evidence-engine.vercel.app/">Forecast evidence</a>
+      <a class="cta ghost" href="https://github.com/josephdeville">github.com/josephdeville</a>
+    </p>
 
+    <h2>Mapped to Foley’s first 90 days</h2>
     <table>
       <thead>
-        <tr><th>Build</th><th>Outcome</th><th>More</th></tr>
+        <tr><th>Need</th><th>Open this</th><th>What you can do</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td>Deep Research + Hermes</td>
-          <td>Learning outbound + pre-call intelligence</td>
-          <td><a href="./demo/index.html">Demo</a></td>
+          <td>Research + personalization when a meeting books</td>
+          <td><a href="./demo/index.html">Deep Research + Hermes</a></td>
+          <td>Step a prospect through packet, persona, close plan, three variants, simulated learning. Static on purpose (no public LLM).</td>
         </tr>
         <tr>
-          <td>Signal-driven BDR feed</td>
-          <td>10,000+ leads scored</td>
-          <td><a href="./case-studies/02-cortex-signal-driven-bdr-feed.md">Case study</a></td>
+          <td>Account intel before the rep works it</td>
+          <td><a href="https://jd-sanity-gtm-brief.netlify.app/">jd-sanity-gtm-brief.netlify.app</a></td>
+          <td>Ranked queue + full brief from Sanity Content Lake. Eval gate held 3 of 18. <a href="https://github.com/josephdeville/sanity-gtm-account-intelligence">repo</a></td>
         </tr>
         <tr>
-          <td>Anchor / Crux outbound</td>
-          <td>Kill rules, self-sourced pipeline</td>
-          <td><a href="./case-studies/04-anchor-browser-crux-outbound.md">Case study</a></td>
+          <td>Measure pipeline, not activity</td>
+          <td><a href="https://forecast-evidence-engine.vercel.app/">forecast-evidence-engine.vercel.app</a></td>
+          <td>CRO view: rep Commit vs evidence-adjusted Commit. Synthetic Gong + Salesforce. <a href="https://github.com/josephdeville/forecast-evidence-engine">repo</a></td>
         </tr>
         <tr>
-          <td>Deliverability stack</td>
-          <td>40% bounce reduction</td>
-          <td><a href="./case-studies/03-rainforest-qa-deliverability.md">Case study</a></td>
+          <td>Signal catalog → who to work today</td>
+          <td><a href="https://planitroi-itad-signal-engine-hp.vercel.app/">ITAD signal sample</a> · <a href="https://neo-signal-engine.vercel.app/">Neo job-post signals</a></td>
+          <td>Same loop Foley needs for DOT authority, fleet growth, renewals: public signal in, scored queue out.</td>
         </tr>
         <tr>
-          <td>GTM account intelligence</td>
-          <td>Eval-gated rep queue</td>
-          <td><a href="https://jd-sanity-gtm-brief.netlify.app" rel="noopener">Live</a></td>
+          <td>Pipeline queue / ownership</td>
+          <td><a href="https://gaiia-gtm-engine.vercel.app/">gaiia queue</a> · <a href="https://dnsfilter-gtm-health-console.vercel.app/">health console</a></td>
+          <td>Concept UIs for other ICPs. Pattern is the point: queue, owner, next action.</td>
+        </tr>
+        <tr>
+          <td>Evidence-gated outbound (clone and run)</td>
+          <td><a href="https://github.com/josephdeville/ai-sdr-engine">ai-sdr-engine</a></td>
+          <td>Research agents, tool-less writer, Slack HITL, reply class. <code>DRY_RUN=1</code> then <code>/traces</code>. Not hosted (keys / abuse).</td>
         </tr>
       </tbody>
     </table>
 
-    <p><a href="./README.md">Full README</a> · <a href="https://github.com/josephdeville/ai-sdr-engine">ai-sdr-engine</a> · <a href="mailto:joseph.deville@cloudanditservices.com">Email</a> · <a href="https://www.linkedin.com/in/joseph-deville/">LinkedIn</a></p>
+    <p>Cortex instrumentation story: <a href="https://joseph-deville-gtm-systems.vercel.app/">five systems, attribution first</a>. Public code index: <a href="https://github.com/josephdeville">github.com/josephdeville</a>.</p>
 
-    <footer>Built for conversation with Misha Sulpovar / Foley CAIO team.</footer>
+    <p><a href="./README.md">README</a> · <a href="./demo/index.html">Hermes demo</a> · <a href="mailto:joseph.deville@cloudanditservices.com">Email</a> · <a href="https://www.linkedin.com/in/joseph-deville/">LinkedIn</a></p>
+
+    <footer>Landing only. The prototypes live on GitHub, Pages, Netlify, and Vercel.</footer>
   </div>
 </body>
 </html>
