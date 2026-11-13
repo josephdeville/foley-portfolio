@@ -1,14 +1,15 @@
 # Submission drafts (do not send until Joseph reviews)
 
-## Email to Ashby — **USE THIS NOW**
+## Email to Foley — **USE THIS** (direct to Misha; not Ashby ATS)
 
-**To:** ashby@foley.io  
-**From:** Joseph DeVille (joseph.deville@cloudanditservices.com)  
-**Subject:** GitHub portfolio — Joseph DeVille (GTM FDE)
+**To:** Misha Sulpovar — `sulpovar_m@foley.io` *(inferred Foley format — confirm before send)*  
+**Cc (optional):** Ashby (Foley) — `ashby@foley.io`  
+**From:** Joseph DeVille  
+**Subject:** GTM Forward Deployed Engineer — GitHub portfolio (Joseph DeVille)
 
-Ashby—
+Misha—
 
-Great speaking with you on Tuesday. As discussed, here is the GitHub package for you to pass to Misha:
+Following up on the GTM FDE conversation with your team on Tuesday. Here is the GitHub package for your GTM FDE loop:
 
 - **Foley-specific portfolio (start here):** https://github.com/josephdeville/foley-portfolio  
 - **Interactive demo (Deep Research + Hermes):** https://github.com/josephdeville/foley-portfolio/blob/main/demo/index.html  
@@ -23,9 +24,11 @@ Great speaking with you on Tuesday. As discussed, here is the GitHub package for
 4. **Consulting (Anchor Browser, Crux)** — self-sourced via outbound; experiment **kill rules** and deliverability owned end-to-end.
 5. **Public reference code:** [ai-sdr-engine](https://github.com/josephdeville/ai-sdr-engine) · [GTM account intelligence demo](https://jd-sanity-gtm-brief.netlify.app) (eval-gated briefs).
 
-**90-day frame (for Misha):** validate hypotheses fast → prioritize → build → measure → iterate; first shippables are a signal feed prototype and a calendar-triggered research brief agent.
+**90 days:** validate hypotheses → prioritize → build fast → measure → iterate.
 
-Happy to walk the demo on the **45-minute call with Misha** whenever scheduling works.
+Ready for the **45-minute** conversation whenever works.
+
+*Ashby (`ashby@foley.io`) is Foley staff from the interview—not Ashby HQ recruiting.*
 
 Joseph DeVille  
 joseph.deville@cloudanditservices.com · (337) 802-6686  
@@ -33,16 +36,9 @@ https://www.linkedin.com/in/joseph-deville/
 
 ---
 
-## Granola action items (Nov 11, 2026 interview)
+## Contact notes
 
-| Owner | Action |
-|-------|--------|
-| Joseph | Send GitHub portfolio to Ashby **immediately** |
-| Ashby (ashby@foley.io) | Submit profile + portfolio to **Misha** within ~24h |
-| Next | **45-minute** video call with Misha; ~**2 weeks** target to offer per call notes |
-
----
-
-## Alternate: forwardable note for Misha (Ashby can paste)
-
-Joseph DeVille — GTM FDE candidate. First in-house GTM engineer at Cortex (17 builds, $1.57M influenced pipeline). Flagship build: calendar-triggered deep research + personalized outbound with continuous learning. Portfolio: https://github.com/josephdeville/foley-portfolio — demo in `demo/index.html`.
+| Who | Email | Role |
+|-----|--------|------|
+| Misha Sulpovar | `sulpovar_m@foley.io` *(verify)* | CAIO, hiring manager |
+| Ashby | `ashby@foley.io` | Foley employee (interview); optional Cc only |
