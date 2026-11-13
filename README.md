@@ -86,4 +86,4 @@ Joseph DeVille · Houston, TX
 [joseph.deville@cloudanditservices.com](mailto:joseph.deville@cloudanditservices.com) · (337) 802-6686  
 [LinkedIn](https://www.linkedin.com/in/joseph-deville/) · [GitHub](https://github.com/josephdeville)
 
-**Share this portfolio:** [github.com/josephdeville/foley-portfolio](https://github.com/josephdeville/foley-portfolio) · after GitHub Pages is enabled: `https://josephdeville.github.io/foley-portfolio/`
+**Share this portfolio:** [github.com/josephdeville/foley-portfolio](https://github.com/josephdeville/foley-portfolio) · live: [josephdeville.github.io/foley-portfolio](https://josephdeville.github.io/foley-portfolio/) · [demo](https://josephdeville.github.io/foley-portfolio/demo/)

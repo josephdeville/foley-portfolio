@@ -12,8 +12,8 @@ Misha—
 Following up on the GTM FDE conversation with your team on Tuesday. Here is the GitHub package for your GTM FDE loop:
 
 - **Foley-specific portfolio (start here):** https://github.com/josephdeville/foley-portfolio  
-- **Interactive demo (Deep Research + Hermes):** https://github.com/josephdeville/foley-portfolio/blob/main/demo/index.html  
-  *(GitHub Pages after Settings → Pages → GitHub Actions: https://josephdeville.github.io/foley-portfolio/demo/)*
+- **Live site:** https://josephdeville.github.io/foley-portfolio/  
+- **Interactive demo (Deep Research + Hermes):** https://josephdeville.github.io/foley-portfolio/demo/
 - **GitHub profile (broader builds):** https://github.com/josephdeville
 
 **Headline on the work we talked through:**
