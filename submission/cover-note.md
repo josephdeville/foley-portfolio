@@ -10,10 +10,9 @@ Ashby—
 
 Great speaking with you on Tuesday. As discussed, here is the GitHub package for you to pass to Misha:
 
-- **Foley-specific portfolio (start here):** https://github.com/josephdeville/foley-portfolio/tree/cursor/foley-portfolio-optimize-281b  
-  *(Latest tailored version; merge to `main` in progress — if `main` is updated, use https://github.com/josephdeville/foley-portfolio instead.)*
-- **Interactive demo (Deep Research + Hermes):** https://github.com/josephdeville/foley-portfolio/blob/cursor/foley-portfolio-optimize-281b/demo/index.html  
-  *(Open raw / download `index.html`, or use GitHub Pages after enable: https://josephdeville.github.io/foley-portfolio/demo/)*
+- **Foley-specific portfolio (start here):** https://github.com/josephdeville/foley-portfolio  
+- **Interactive demo (Deep Research + Hermes):** https://github.com/josephdeville/foley-portfolio/blob/main/demo/index.html  
+  *(GitHub Pages after Settings → Pages → GitHub Actions: https://josephdeville.github.io/foley-portfolio/demo/)*
 - **GitHub profile (broader builds):** https://github.com/josephdeville
 
 **Headline on the work we talked through:**
