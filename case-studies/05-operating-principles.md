@@ -19,7 +19,7 @@ At Cortex this was the discipline that got $1.57M in pipeline credited to the sy
 
 ## Prioritize against reversibility and blast radius
 
-Foley has a backlog of AI ideas. Not all of them are equal. I rank them on two axes:
+Every GTM team has a backlog of AI and automation ideas. Not all of them are equal. I rank them on two axes:
 
 - **Reversibility:** can I ship this, measure it, and kill it in 2 weeks if it doesn't work? Fast-reversible ideas go first.
 - **Blast radius:** who does this touch? A tool that only affects one BDR's workflow is lower-stakes than one that gates every outbound send from the company.
@@ -47,4 +47,4 @@ Every build gets:
 - A kill rule (if X doesn't happen by Y date, we kill it)
 - A post-ship note: what worked, what didn't, what I learned
 
-This is how a small team keeps up with a shipping GTM engineer without needing to be in every build decision. Also how I'd expect to work with Misha.
+This is how a lean team keeps up with a shipping GTM engineer without needing to sit inside every build decision.

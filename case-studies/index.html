@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Case studies · Joseph DeVille</title>
+  <meta name="description" content="Five short write-ups of shipped GTM engineering work: Deep Research + Hermes, signal-driven BDR feed, email deliverability, consulting outbound, and operating principles.">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,66 +16,236 @@
       theme: {
         extend: {
           fontFamily: { sans: ['Inter', 'sans-serif'] },
-          colors: { background: '#07080c', foreground: '#f4f1ea' }
+          colors: {
+            background: '#07080c',
+            foreground: '#f4f1ea',
+            card: '#12151d',
+          }
         }
       }
     }
   </script>
   <style>
+    html { scroll-behavior: smooth; }
     body { font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
+    .glow {
+      pointer-events: none;
+      position: fixed;
+      inset: -10% 0 auto;
+      height: 50vh;
+      background:
+        radial-gradient(55% 80% at 50% 0%, rgba(124, 58, 237, .28), transparent 70%),
+        radial-gradient(40% 50% at 85% 8%, rgba(239, 150, 72, .14), transparent 60%);
+      z-index: 0;
+    }
   </style>
 </head>
-<body class="bg-background text-foreground">
+<body class="bg-background text-foreground overflow-x-hidden">
+  <div class="glow" aria-hidden="true"></div>
+
   <header class="sticky top-0 z-30 flex items-center justify-between gap-4 px-6 md:px-12 py-5 bg-background/70 backdrop-blur-xl border-b border-white/10">
     <a href="/" class="text-lg md:text-xl font-semibold tracking-tighter uppercase">Joseph DeVille</a>
     <nav class="hidden md:flex items-center gap-7 text-sm text-white/70">
       <a href="/#work" class="hover:text-white">Work</a>
+      <a href="/case-studies/" class="text-white">Case studies</a>
       <a href="/demo/" class="hover:text-white">Demo</a>
       <a href="/#about" class="hover:text-white">About</a>
       <a href="https://github.com/josephdeville" class="hover:text-white">GitHub</a>
     </nav>
     <a href="/demo/" class="inline-flex items-center rounded-full bg-foreground text-neutral-900 px-4 py-2 text-sm font-medium hover:bg-white transition-colors">Open Hermes</a>
   </header>
-  <main class="max-w-3xl mx-auto px-6 py-16">
-    <p class="text-xs uppercase tracking-widest text-white/40 mb-4">Writeups</p>
-    <h1 class="text-4xl md:text-6xl font-extralight tracking-tight mb-12">Case studies</h1>
-    <ul class="divide-y divide-white/10">
-      <li class="py-6">
-        <a class="group block" href="https://github.com/josephdeville/foley-portfolio/blob/main/case-studies/01-cortex-deep-research-agent.md">
-          <div class="text-[10px] uppercase tracking-widest text-white/40 mb-1">01 · Cortex</div>
-          <h2 class="text-xl font-medium group-hover:text-white/80">Deep Research + Hermes</h2>
-          <p class="mt-1 text-sm text-white/50 font-light">End-to-end GTM agents. Live walkthrough at /demo/.</p>
+
+  <main class="relative z-10 max-w-4xl mx-auto px-6 py-16 md:py-20">
+    <p class="text-xs uppercase tracking-widest text-white/40 mb-4">Writeups · 01–05</p>
+    <h1 class="text-4xl md:text-6xl font-extralight tracking-tight mb-4">Case studies</h1>
+    <p class="text-sm md:text-base text-white/55 font-light max-w-2xl leading-relaxed mb-12">
+      Five short write-ups of shipped GTM systems: how they were scoped, what stack ran underneath them, and how they were measured against pipeline.
+    </p>
+
+    <ul class="divide-y divide-white/10 border-y border-white/10 mb-16">
+      <li class="py-5">
+        <a class="group flex items-baseline justify-between gap-4" href="#cs-01">
+          <div>
+            <div class="text-[10px] uppercase tracking-widest text-white/40 mb-1">01 · Cortex</div>
+            <h2 class="text-lg md:text-xl font-medium group-hover:text-white/80">Deep Research + Hermes</h2>
+            <p class="mt-1 text-sm text-white/50 font-light">Calendar-triggered research briefs and self-improving outbound.</p>
+          </div>
+          <span class="text-xs text-white/40 group-hover:text-white/80 shrink-0">Read ↓</span>
         </a>
       </li>
-      <li class="py-6">
-        <a class="group block" href="https://github.com/josephdeville/foley-portfolio/blob/main/case-studies/02-cortex-signal-driven-bdr-feed.md">
-          <div class="text-[10px] uppercase tracking-widest text-white/40 mb-1">02 · Cortex</div>
-          <h2 class="text-xl font-medium group-hover:text-white/80">Signal-driven BDR feed</h2>
-          <p class="mt-1 text-sm text-white/50 font-light">Daily scoring into CRM. Part of the Cortex pipeline systems.</p>
+      <li class="py-5">
+        <a class="group flex items-baseline justify-between gap-4" href="#cs-02">
+          <div>
+            <div class="text-[10px] uppercase tracking-widest text-white/40 mb-1">02 · Cortex</div>
+            <h2 class="text-lg md:text-xl font-medium group-hover:text-white/80">Signal-driven BDR feed</h2>
+            <p class="mt-1 text-sm text-white/50 font-light">Daily Clay waterfalls, CRM suppression, and 10,000+ leads scored.</p>
+          </div>
+          <span class="text-xs text-white/40 group-hover:text-white/80 shrink-0">Read ↓</span>
         </a>
       </li>
-      <li class="py-6">
-        <a class="group block" href="https://github.com/josephdeville/foley-portfolio/blob/main/case-studies/03-rainforest-qa-deliverability.md">
-          <div class="text-[10px] uppercase tracking-widest text-white/40 mb-1">03 · Rainforest</div>
-          <h2 class="text-xl font-medium group-hover:text-white/80">Deliverability · 40% bounce drop</h2>
-          <p class="mt-1 text-sm text-white/50 font-light">Suppression across sending platforms.</p>
+      <li class="py-5">
+        <a class="group flex items-baseline justify-between gap-4" href="#cs-03">
+          <div>
+            <div class="text-[10px] uppercase tracking-widest text-white/40 mb-1">03 · Rainforest QA</div>
+            <h2 class="text-lg md:text-xl font-medium group-hover:text-white/80">Deliverability · 40% bounce drop</h2>
+            <p class="mt-1 text-sm text-white/50 font-light">Cross-platform bounce suppression, mailbox caps, and receiver-specific pacing.</p>
+          </div>
+          <span class="text-xs text-white/40 group-hover:text-white/80 shrink-0">Read ↓</span>
         </a>
       </li>
-      <li class="py-6">
-        <a class="group block" href="https://github.com/josephdeville/foley-portfolio/blob/main/case-studies/04-anchor-browser-crux-outbound.md">
-          <div class="text-[10px] uppercase tracking-widest text-white/40 mb-1">04 · Consulting</div>
-          <h2 class="text-xl font-medium group-hover:text-white/80">Anchor Browser and Crux outbound</h2>
-          <p class="mt-1 text-sm text-white/50 font-light">Self-sourced engagements, then the infrastructure behind them.</p>
+      <li class="py-5">
+        <a class="group flex items-baseline justify-between gap-4" href="#cs-04">
+          <div>
+            <div class="text-[10px] uppercase tracking-widest text-white/40 mb-1">04 · Consulting</div>
+            <h2 class="text-lg md:text-xl font-medium group-hover:text-white/80">Anchor Browser and Crux outbound</h2>
+            <p class="mt-1 text-sm text-white/50 font-light">Self-sourced client engagements, multi-domain pools, and 500-send kill rules.</p>
+          </div>
+          <span class="text-xs text-white/40 group-hover:text-white/80 shrink-0">Read ↓</span>
         </a>
       </li>
-      <li class="py-6">
-        <a class="group block" href="https://github.com/josephdeville/foley-portfolio/blob/main/case-studies/05-operating-principles.md">
-          <div class="text-[10px] uppercase tracking-widest text-white/40 mb-1">05</div>
-          <h2 class="text-xl font-medium group-hover:text-white/80">Operating principles</h2>
-          <p class="mt-1 text-sm text-white/50 font-light">How the work is scoped, measured, and killed.</p>
+      <li class="py-5">
+        <a class="group flex items-baseline justify-between gap-4" href="#cs-05">
+          <div>
+            <div class="text-[10px] uppercase tracking-widest text-white/40 mb-1">05 · Operating model</div>
+            <h2 class="text-lg md:text-xl font-medium group-hover:text-white/80">Operating principles</h2>
+            <p class="mt-1 text-sm text-white/50 font-light">How GTM engineering work gets scoped, measured in pipeline, and killed when it misses.</p>
+          </div>
+          <span class="text-xs text-white/40 group-hover:text-white/80 shrink-0">Read ↓</span>
         </a>
       </li>
     </ul>
+
+    <div class="space-y-12">
+      <!-- 01 -->
+      <article id="cs-01" class="scroll-mt-28 rounded-2xl bg-card border border-white/10 p-6 md:p-10">
+        <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">01 · Cortex · First in-house GTM engineer</div>
+        <h2 class="text-2xl md:text-3xl font-light tracking-tight mb-4">Deep Research + Hermes</h2>
+        <p class="text-sm text-white/60 font-light leading-relaxed mb-6">
+          Account executives were booking meetings and walking in cold with generic notes, no buyer read, and no close plan. Marketing and outbound copy was either safe-and-bland or slow to produce. I built two connected agents to run as a single loop.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="rounded-xl bg-white/[0.03] border border-white/10 p-5">
+            <h3 class="text-xs uppercase tracking-widest text-white/45 mb-2">Deep Research · Pre-call brief</h3>
+            <p class="text-sm text-white/65 font-light leading-relaxed">
+              Triggered on any external calendar booking. Pulls company signals (funding, hiring, tech stack, news), attendee history, and every prior CRM touch. Infers behavioral buying style (decisive vs. consensus, numbers vs. narrative) and posts a one-page close plan to Slack 30 minutes before the call.
+            </p>
+          </div>
+          <div class="rounded-xl bg-white/[0.03] border border-white/10 p-5">
+            <h3 class="text-xs uppercase tracking-widest text-white/45 mb-2">Hermes · Learning outbound</h3>
+            <p class="text-sm text-white/65 font-light leading-relaxed">
+              Turns the research packet into persona-tuned cold emails, follow-ups, and LinkedIn notes cloned to the sender's voice. Generates parallel variants and re-weights prompt framing as reply, meeting, and stage-progression events flow back into LangFuse.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-3 text-sm text-white/60 font-light leading-relaxed mb-6">
+          <p><strong class="font-medium text-foreground">Why it learns instead of running fixed rules:</strong> Scoring, routing, and enrichment are schema tasks. Deciding which angle lands with a skeptical VP of Engineering versus a risk-first legal ops buyer requires continuous feedback from replies, booked meetings, and pipeline progression.</p>
+          <p><strong class="font-medium text-foreground">Impact:</strong> Part of the Cortex GTM systems credited with $1.57M in pipeline influence. Saved AEs 30 to 45 minutes of manual prep per call, with variant performance tracked per persona and a hard kill rule at 500 sends.</p>
+          <p><strong class="font-medium text-foreground">Stack:</strong> TypeScript, Python, CrewAI, LangChain, LangFuse, Trigger.dev, Clay, Salesforce, Slack.</p>
+        </div>
+
+        <div class="flex flex-wrap gap-4 text-sm">
+          <a href="/demo/" class="inline-flex items-center rounded-full bg-foreground text-neutral-900 px-4 py-2 font-medium hover:bg-white transition-colors">Open interactive walkthrough</a>
+          <a href="https://github.com/josephdeville/ai-sdr-engine" class="inline-flex items-center rounded-full border border-white/15 px-4 py-2 text-white/75 hover:border-white/35 hover:text-white transition-colors">ai-sdr-engine (public sibling)</a>
+        </div>
+      </article>
+
+      <!-- 02 -->
+      <article id="cs-02" class="scroll-mt-28 rounded-2xl bg-card border border-white/10 p-6 md:p-10">
+        <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">02 · Cortex · Pipeline systems</div>
+        <h2 class="text-2xl md:text-3xl font-light tracking-tight mb-4">Signal-driven BDR lead feed</h2>
+        <p class="text-sm text-white/60 font-light leading-relaxed mb-6">
+          BDRs were working static Salesforce account lists built a quarter earlier. By the time a rep reached an account, the hiring, funding, or stack change that made it timely was cold. Static lists also cannot be A/B tested like signal hypotheses.
+        </p>
+
+        <ul class="space-y-2.5 text-sm text-white/65 font-light leading-relaxed list-disc pl-5 mb-6">
+          <li><strong class="font-medium text-foreground">Multi-source Clay waterfalls:</strong> Pulled daily from LinkedIn Sales Navigator, ZoomInfo, Clearbit, and custom scrapers tracking job reqs, stack changes, and funding events.</li>
+          <li><strong class="font-medium text-foreground">Dynamic ICP scoring:</strong> Scored accounts against what was converting that month rather than a frozen spreadsheet rubric.</li>
+          <li><strong class="font-medium text-foreground">Hard CRM suppression:</strong> Matched against Salesforce and internal records to suppress active sequences, existing customers, recent closed-lost deals, and rep-owned accounts before anything queued.</li>
+          <li><strong class="font-medium text-foreground">Workflow delivery:</strong> Routed top accounts into Salesforce queues and morning Slack cards with the exact trigger attached so reps knew why the account surfaced today.</li>
+        </ul>
+
+        <div class="space-y-3 text-sm text-white/60 font-light leading-relaxed">
+          <p><strong class="font-medium text-foreground">Scale &amp; impact:</strong> 10,000+ leads scored across SMB and Mid-Market, feeding 3 BDRs daily, saving ~3 hours per rep per week of manual list hygiene, and contributing to $1.57M in influenced pipeline across 17 Cortex builds. Signal categories were re-ranked monthly by booked-meeting conversion.</p>
+          <p><strong class="font-medium text-foreground">Stack:</strong> Clay, Python, Trigger.dev, Salesforce (Certified Platform Administrator), HubSpot, Marketo, Slack.</p>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article id="cs-03" class="scroll-mt-28 rounded-2xl bg-card border border-white/10 p-6 md:p-10">
+        <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">03 · Rainforest QA · Sending infrastructure</div>
+        <h2 class="text-2xl md:text-3xl font-light tracking-tight mb-4">Email deliverability · 40% bounce drop</h2>
+        <p class="text-sm text-white/60 font-light leading-relaxed mb-6">
+          Hard bounces were climbing across multiple marketing and outbound platforms, putting domain reputation on a short path to blocklists. Unverified list imports, 12-month-stale re-engagement sends, and siloed bounce logs meant a hard bounce in one tool kept getting mailed from another.
+        </p>
+
+        <ul class="space-y-2.5 text-sm text-white/65 font-light leading-relaxed list-disc pl-5 mb-6">
+          <li><strong class="font-medium text-foreground">Unified suppression source of truth:</strong> Webhook handlers and scheduled Python/SQL sync jobs ensured a bounce or opt-out on any platform suppressed across every sending tool immediately.</li>
+          <li><strong class="font-medium text-foreground">Mailbox and receiver throttling:</strong> Enforced per-mailbox daily caps, ramp curves on new or reactivated inboxes, and receiver-specific pacing across Gmail, Microsoft 365, and Yahoo.</li>
+          <li><strong class="font-medium text-foreground">Authentication &amp; health checks:</strong> Locked in SPF, DKIM, DMARC alignment and isolated tracking domains before scaling send volume.</li>
+        </ul>
+
+        <div class="space-y-3 text-sm text-white/60 font-light leading-relaxed">
+          <p><strong class="font-medium text-foreground">Impact:</strong> Hard bounces dropped 40%, sender reputation recovered inside the quarter, and centralized suppression became the shared guardrail underneath every sequence and nurture program afterward.</p>
+          <p><strong class="font-medium text-foreground">Stack:</strong> Python, SQL, webhook workers, SPF/DKIM/DMARC monitoring, multi-platform marketing and outbound senders.</p>
+        </div>
+      </article>
+
+      <!-- 04 -->
+      <article id="cs-04" class="scroll-mt-28 rounded-2xl bg-card border border-white/10 p-6 md:p-10">
+        <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">04 · Post-Cortex consulting</div>
+        <h2 class="text-2xl md:text-3xl font-light tracking-tight mb-4">Outbound infrastructure · Anchor Browser &amp; Crux</h2>
+        <p class="text-sm text-white/60 font-light leading-relaxed mb-6">
+          Both consulting engagements started from my own outbound motion, then expanded into building the production GTM infrastructure behind their pipeline.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="rounded-xl bg-white/[0.03] border border-white/10 p-5">
+            <h3 class="text-xs uppercase tracking-widest text-white/45 mb-2">Anchor Browser · Browser automation SaaS</h3>
+            <p class="text-sm text-white/65 font-light leading-relaxed">
+              Stood up a 22-mailbox sending pool across 5 domains (Google + Azure), fit-gated enrichment across 55+ microsegments, security-scanner click filtering (~89% of raw clicks were non-human bots), and ~1.7–1.9% positive reply benchmarks.
+            </p>
+          </div>
+          <div class="rounded-xl bg-white/[0.03] border border-white/10 p-5">
+            <h3 class="text-xs uppercase tracking-widest text-white/45 mb-2">Crux · Payments &amp; finance</h3>
+            <p class="text-sm text-white/65 font-light leading-relaxed">
+              Built ICP-specific enrichment waterfalls and HubSpot attribution for high-consideration finance and payments buyers so reply quality and meeting conversion were measurable by microsegment.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-3 text-sm text-white/60 font-light leading-relaxed">
+          <p><strong class="font-medium text-foreground">Experiment discipline:</strong> Every campaign shipped with a pre-agreed kill rule. At 500 sends per variant, anything below 0.5% positive reply was killed and rotated; winners scaled.</p>
+          <p><strong class="font-medium text-foreground">Stack:</strong> TypeScript, Python, Clay, Smartlead, Instantly, HubSpot, Trigger.dev, custom sending and tracking domains.</p>
+        </div>
+      </article>
+
+      <!-- 05 -->
+      <article id="cs-05" class="scroll-mt-28 rounded-2xl bg-card border border-white/10 p-6 md:p-10">
+        <div class="text-[10px] uppercase tracking-widest text-white/40 mb-2">05 · Operating model</div>
+        <h2 class="text-2xl md:text-3xl font-light tracking-tight mb-4">How I work · GTM engineering principles</h2>
+        <div class="space-y-4 text-sm text-white/65 font-light leading-relaxed">
+          <p><strong class="font-medium text-foreground">One foot in pipeline, one in process.</strong> Every week balances builds that create pipeline this quarter (signal feeds, scoring models, outbound experiments) with builds that give reps and marketers hours back (auto-enriched briefs, silent-deal nudges, automated suppression hygiene).</p>
+          <p><strong class="font-medium text-foreground">Measure in forecast language, not activity language.</strong> "Agent shipped" is not a metric. Every system is instrumented against the pipeline event it is meant to move, with RevOps attribution agreed before code is written.</p>
+          <p><strong class="font-medium text-foreground">Prioritize by reversibility and blast radius.</strong> High-reversibility, low-blast-radius experiments (new signal trigger, single-rep workflow) ship in days with a 30-day keep-or-kill gate. High-blast-radius or compliance-sensitive changes (CRM routing, domain-wide sending rules, customer data) pilot on a slice with explicit guardrails and evals first.</p>
+          <p><strong class="font-medium text-foreground">Use learning loops only where judgment varies.</strong> Routers, scorers, and enrichers stay deterministic against strict schemas. Copy framing, buyer persona reads, and signal weighting earn feedback loops tied to replies and stage conversion.</p>
+          <p><strong class="font-medium text-foreground">Write it down early.</strong> Every build starts with a one-paragraph problem statement, target pipeline metric, and kill rule, and closes with a short post-ship readout of what moved and what got cut.</p>
+        </div>
+      </article>
+    </div>
   </main>
+
+  <footer class="relative z-10 border-t border-white/10 px-6 md:px-12 py-10 mt-12">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between gap-6 text-sm text-white/45">
+      <div>Joseph DeVille · Houston</div>
+      <div class="flex gap-6">
+        <a href="/" class="hover:text-white">Work</a>
+        <a href="/demo/" class="hover:text-white">Demo</a>
+        <a href="https://github.com/josephdeville" class="hover:text-white">GitHub</a>
+        <a href="https://www.linkedin.com/in/joseph-deville/" class="hover:text-white">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

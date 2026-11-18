@@ -107,10 +107,5 @@ Each example shows:
 ## Related code (public)
 
 - **[ai-sdr-engine](https://github.com/josephdeville/ai-sdr-engine)** — open multi-agent SDR pipeline (research, approval, send, reply classification) that reflects the same design patterns as Deep Research + Hermes.
-- **Interactive output sample:** [`/demo`](../demo/index.html) (prospect 2 = consensus buyer in a regulated services context).
+- **Interactive output sample:** [`/demo`](../demo/index.html) (walks through technical dev-tools, risk-first legal ops, and analytical Series B finance buyers).
 
-## Why this matters for Foley
-
-Misha's hiring frame: show work that **continuously learns**, ships on the **shared AI platform**, and moves **pipeline with a metric attached**.
-
-This is that pattern. I've built it once. The second build is faster—and the same research → persona → copy → feedback loop applies to fleet-compliance buyers (risk-first, committee, audit trail) as cleanly as it did for dev-tools outbound.
