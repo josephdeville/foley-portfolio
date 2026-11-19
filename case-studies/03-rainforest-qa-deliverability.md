@@ -29,6 +29,7 @@ Three layers:
 - **Infrastructure:** scheduled jobs for cross-platform suppression sync, webhook handlers for real-time bounce events
 - **Data:** SPF / DKIM / DMARC alignment check before volume, custom tracking domain, domain health monitoring
 
-## Why this matters for Foley
+## Takeaway
 
-Deliverability is the quiet, unglamorous half of GTM infrastructure that nobody wants to own until it breaks. Foley is scaling AI-driven outbound into a **regulated B2B market** (DOT / FMCSA, consent, PII)—sending volume and compliance complexity rise together. Someone has to own suppression, throttling, and receiver-specific rules before reputation damage shows up in pipeline. I've done the recovery once. I'd rather build it right from day one than clean it up later.
+Deliverability is the quiet, unglamorous half of GTM infrastructure that nobody wants to own until it breaks. As AI-driven outbound scales volume across domains and inboxes, someone has to own suppression, throttling, and receiver-specific rules before reputation damage shows up in pipeline.
+

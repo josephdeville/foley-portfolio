@@ -27,14 +27,14 @@ For each rep, every morning:
 
 ## Why signals instead of a static list
 
-Shannon / Ashby's call frame: "validate or kill GTM hypotheses quickly." That's exactly what a signal-driven feed does. Every signal (job posting, funding event, tech adoption) is a testable hypothesis that correlates to buying intent. You run it for 60 days, measure meeting conversion against baseline, and keep what works.
+Every signal (job posting, funding event, tech adoption, leadership change) is a testable hypothesis that correlates to buying intent. You run it for 60 days, measure meeting conversion against baseline, and keep what works.
 
 Static lists can't be A/B tested like that. Signal feeds can.
 
 ## Stack
 
 - **Enrichment waterfall:** Clay (primary), ZoomInfo, LinkedIn Sales Navigator, Clearbit
-- **CRM routing:** Salesforce (Certified Platform Administrator), HubSpot (5 years), Marketo
+- **CRM routing:** Salesforce (Platform Foundations), HubSpot (5 years, RevOps Admin), Marketo
 - **Jobs:** trigger.dev for the daily refresh
 - **Suppression + dedup logic:** Python + Clay tables
 - **Delivery:** Salesforce custom object → BDR daily queue + Slack
@@ -45,8 +45,3 @@ Static lists can't be A/B tested like that. Signal feeds can.
 - Replaced a hand-maintained static queue that was costing a BDR ~3 hours a week of list hygiene
 - Signal categories ranked by actual meeting conversion rate, re-ranked monthly (the loop)
 
-## Why this matters for Foley
-
-The Foley role is explicitly "sales and marketing function, building tools, maintaining those tools, making sure they're working." A signal-driven lead feed is the first thing I'd be looking at in a 90-day plan: it compounds, it's measurable, and every follow-on build (routing, scoring, outreach agent) plugs into the same scaffolding.
-
-**Foley signal catalog (same pattern, different inputs):** new DOT authority, fleet growth, safety events, Clearinghouse / renewal timing, self-serve vs enterprise intent—each becomes a testable hypothesis with a 60-day conversion read and a kill rule.

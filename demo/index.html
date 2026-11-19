@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>if (location.hostname.endsWith('.workers.dev')) location.replace('https://josephdeville.com' + location.pathname + location.search + location.hash);</script>
 <title>Deep Research + Hermes · Joseph DeVille</title>
+<meta name="description" content="Interactive walkthrough of Deep Research + Hermes: buyer research packets, persona reads, close plans, and learning outbound variants.">
+<link rel="canonical" href="https://josephdeville.com/demo/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://josephdeville.com/demo/">
+<meta property="og:title" content="Deep Research + Hermes · Joseph DeVille">
+<meta property="og:description" content="Interactive walkthrough of Deep Research + Hermes: buyer research packets, persona reads, close plans, and learning outbound variants.">
+<meta property="og:image" content="https://josephdeville.com/assets/hermes.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -255,11 +264,13 @@
   <a class="brand" href="/">Joseph DeVille</a>
   <nav class="site-nav">
     <a href="/#work">Work</a>
+    <a href="/#architecture">Architecture</a>
+    <a href="/#experience">Experience</a>
+    <a href="/case-studies/">Case studies</a>
     <a class="current" href="/demo/">Demo</a>
     <a href="/#about">About</a>
-    <a href="https://github.com/josephdeville">GitHub</a>
   </nav>
-  <a class="nav-cta" href="/demo/">Open Hermes</a>
+  <a class="nav-cta" href="/JosephDeville-Resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
 </header>
 <div class="wrap">
   <div class="page-kicker">Interactive walkthrough</div>
@@ -269,17 +280,17 @@
   <div class="intro">
     <p><strong>What it is.</strong> A walkthrough of research and outbound for one meeting. Static on purpose. No live model.</p>
     <p style="margin-top:10px"><strong>What it does.</strong> You pick a prospect. You see the research, the buyer read, the close plan, and three emails. Click an email to see how a reply would change the next send.</p>
-    <p style="margin-top:10px"><strong>Start with prospect 2.</strong> That sample is a regulated, committee buy. Same pattern as fleet compliance (DOT/FMCSA). Foley sells fleet software, not legal services.</p>
+    <p style="margin-top:10px"><strong>Three buyer types.</strong> Switch tabs to compare a technical dev-tools VP, a risk-first legal ops committee buyer, and a numbers-first Series B finance lead.</p>
   </div>
 
   <div class="tabs">
-    <button class="tab" data-target="p1">1 · VP Engineering, dev-tools SaaS</button>
-    <button class="tab active" data-target="p2">2 · Head of Operations, mid-market law firm</button>
+    <button class="tab active" data-target="p1">1 · VP Engineering, dev-tools SaaS</button>
+    <button class="tab" data-target="p2">2 · Head of Operations, mid-market law firm</button>
     <button class="tab" data-target="p3">3 · Director of Finance, Series B payments</button>
   </div>
 
   <!-- PROSPECT 1 -->
-  <div class="prospect" id="p1">
+  <div class="prospect active" id="p1">
     <div class="prospect-card">
       <div class="prospect-header">
         <div class="who">
@@ -387,7 +398,7 @@ Joe</div>
   </div>
 
   <!-- PROSPECT 2 -->
-  <div class="prospect active" id="p2">
+  <div class="prospect" id="p2">
     <div class="prospect-card">
       <div class="prospect-header">
         <div class="who">
@@ -603,7 +614,9 @@ Joe</div>
     <div>Output is representative of Deep Research + Hermes at Cortex. No live company data. <a href="/case-studies/">Case studies</a></div>
     <div>
       <a href="/">Work</a>
+      · <a href="/case-studies/">Case studies</a>
       · <a href="https://github.com/josephdeville">GitHub</a>
+      · <a href="https://www.linkedin.com/in/joseph-deville/">LinkedIn</a>
     </div>
   </footer>
 </div>

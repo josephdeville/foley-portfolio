@@ -7,12 +7,12 @@ Static, self-contained walkthrough of Deep Research + Hermes output. No backend,
 **Option 1 — Open the file directly**
 Double-click `index.html` or drag it into your browser. Works offline.
 
-**Option 2 — GitHub Pages (recommended for sharing)**
-If this repo is on GitHub, enable Pages (Settings → Pages → source: main, folder: /root), then the demo is live at:
-`https://josephdeville.github.io/foley-portfolio/demo/`
+**Option 2 — Live site**
+Served directly at:
+`https://josephdeville.com/demo/`
 
 **Option 3 — Any static host**
-Drop the whole `foley-portfolio/` folder into Netlify, Vercel, Cloudflare Pages, GitHub Pages — anything that serves static files.
+Drop the repository root into Netlify, Vercel, Cloudflare Pages/Workers, or GitHub Pages — anything that serves static files.
 
 ## What the demo shows
 
