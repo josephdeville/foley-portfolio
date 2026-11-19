@@ -64,12 +64,22 @@
     border-bottom: 1px solid var(--border);
   }
   .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
     font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: -0.04em;
     text-transform: uppercase;
     color: var(--text);
     text-decoration: none;
+  }
+  .brand img {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,.2);
   }
   .site-nav { display: flex; align-items: center; gap: 28px; font-size: 14px; }
   .site-nav a { color: rgba(255,255,255,.7); text-decoration: none; }
@@ -261,7 +271,7 @@
 <body>
 <div class="glow" aria-hidden="true"></div>
 <header class="site-header">
-  <a class="brand" href="/">Joseph DeVille</a>
+  <a class="brand" href="/"><img src="/assets/joseph-deville.jpg" alt="Joseph DeVille"><span>Joseph DeVille</span></a>
   <nav class="site-nav">
     <a href="/#work">Work</a>
     <a href="/#architecture">Architecture</a>
