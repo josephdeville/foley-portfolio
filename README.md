@@ -41,11 +41,11 @@ At **Cortex** I was the first in-house GTM engineer (**17 shipped builds**), wit
 
 ## Stack
 
-TypeScript, Python · LangChain, CrewAI, LangFuse, Trigger.dev, AI SDK · Salesforce (Certified Administrator), HubSpot RevOps, Marketo · Clay, ZoomInfo, LinkedIn Sales Navigator · Smartlead, Instantly · AWS, Azure
+TypeScript, Python · LangChain, CrewAI, LangFuse, Trigger.dev, AI SDK · HubSpot (Certified Revenue Operations Administrator), Salesforce (Platform Foundations), Marketo · Clay (Automated Outbound Certified), ZoomInfo, LinkedIn Sales Navigator · Smartlead, Instantly · PostgreSQL / Neon, AWS, Azure
 
 ---
 
 ## Contact
 
 Joseph DeVille · Houston, TX  
-[LinkedIn](https://www.linkedin.com/in/joseph-deville/) · [GitHub](https://github.com/josephdeville) · [josephdeville.com](https://josephdeville.com)
+[josephdeville523@gmail.com](mailto:josephdeville523@gmail.com) · [Resume PDF](https://josephdeville.com/JosephDeville-Resume.pdf) · [LinkedIn](https://www.linkedin.com/in/joseph-deville/) · [GitHub](https://github.com/josephdeville) · [josephdeville.com](https://josephdeville.com)

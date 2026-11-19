@@ -34,7 +34,7 @@ Static lists can't be A/B tested like that. Signal feeds can.
 ## Stack
 
 - **Enrichment waterfall:** Clay (primary), ZoomInfo, LinkedIn Sales Navigator, Clearbit
-- **CRM routing:** Salesforce (Certified Platform Administrator), HubSpot (5 years), Marketo
+- **CRM routing:** Salesforce (Platform Foundations), HubSpot (5 years, RevOps Admin), Marketo
 - **Jobs:** trigger.dev for the daily refresh
 - **Suppression + dedup logic:** Python + Clay tables
 - **Delivery:** Salesforce custom object → BDR daily queue + Slack
